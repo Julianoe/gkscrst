@@ -72,13 +72,13 @@
 
 
 
-	<!--<div id="page">--> <!--Cette div est d�cplac�e hors du header afin de rendre ce dernier totalement ind�pendant de la partie CONTENT/FOOTER-->
+	<!--<div class="page">--> <!--Cette div est d�cplac�e hors du header afin de rendre ce dernier totalement ind�pendant de la partie CONTENT/FOOTER-->
 
 	
 
-		<div id="header">
+		<div class="header">
 
-			<a href="<?php bloginfo('url'); ?>"><div id="banner"></div></a>
+			<a href="<?php bloginfo('url'); ?>"><div class="banner"></div></a>
 
 			
 
@@ -118,7 +118,7 @@
 
 			
 
-		</div> <!--fermeture du div id="header"-->
+		</div> <!--fermeture du div class="header"-->
 
 		
 

@@ -1,9 +1,9 @@
 <?php get_header();  /* ouvrir header.php*/?>
 
 
-<div id="page">
+<div class="page">
 
-	<div id="content">
+	<div class="content">
 
 	
 
@@ -141,7 +141,7 @@
 
 	
 
-	</div><!-- fermeture <div id="content"-->
+	</div><!-- fermeture <div class="content"-->
 
 
 
@@ -153,7 +153,7 @@
 
 
 
-</div> <!--fermeture <div id="page"-->
+</div> <!--fermeture <div class="page"-->
 
 <?php get_footer(); ?>
 

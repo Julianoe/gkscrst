@@ -74,5 +74,5 @@ foreach ($categories as $category) {
 <?php get_footer(); ?>
 
 <!--<div class="page-footer"></div>--><!--footer de l'image de fond de page si besoin-->
-</div><!--fermeture <div id="page" from header-->
+</div><!--fermeture <div class="page" from header-->
 ?>

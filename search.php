@@ -1,7 +1,7 @@
 <?php get_header();  /* ouvrir header.php*/?>
 
-<div id="page">
-	<div id="content">
+<div class="page">
+	<div class="content">
 
 		<?php if(have_posts()) :?>
 			<?php while(have_posts()) : the_post(); ?>
@@ -10,7 +10,7 @@
 					<h2><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
 
 					<div class="postmetadata">
-					 <!-- donne des informations sur l'article : sa date , son auteur, le nombre de commentaires. Peut être placé à la fin ou au début -->
+					 <!-- donne des informations sur l'article : sa date , son auteur, le nombre de commentaires. Peut ï¿½tre placï¿½ ï¿½ la fin ou au dï¿½but -->
 							<?php the_time('j F Y') ?> - <?php the_author() ?> | Cat&eacute;gorie: <?php the_category(', ') ?> |
 							<?php comments_popup_link('Pas de commentaires', '1 Commentaire', '% Commentaires'); ?> <?php edit_post_link('Editer', ' &#124; ', ''); ?>
 					</div>
@@ -36,13 +36,13 @@
 		<?php endif; ?>
 
 	
-</div><!-- fermeture <div id="content"-->
+</div><!-- fermeture <div class="content"-->
 
 
 
 	<?php get_sidebar(); ?>
 
-</div> <!--fermeture <div id="page"-->
+</div> <!--fermeture <div class="page"-->
 <?php get_footer(); ?>
 
 </body>

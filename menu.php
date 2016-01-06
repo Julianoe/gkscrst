@@ -1,7 +1,7 @@
 <?php
 function affiche_menu() 
 {
-	// tableaux contenant les liens d'accès et le contenu à afficher
+	// tableaux contenant les liens d'accï¿½s et le contenu ï¿½ afficher
 	//$tab_menu_lien = array( "/", "?page_id=16&rub_id=5", "?page_id=19&rub_id=6", "?page_id=21&rub_id=23" );
 	$images_path = site_url().'/wp-content/themes/GeeksCuriosity/images/';
 	$tab_menu_lien = array(
@@ -10,8 +10,8 @@ function affiche_menu()
 '/wordpress/?cat=5',
 '/wordpress/?cat=6',
 '/wordpress/?cat=23');*/
-	/*ici l'url doit être le chemin complet sur l'hébergeur.*/
-	/*Si possible faire en sorte que l'url soit récupérée et ajoutée seulement à la partie '?cat= x' pour plus de simplicité en cas de changement de nom, etc*/
+	/*ici l'url doit ï¿½tre le chemin complet sur l'hï¿½bergeur.*/
+	/*Si possible faire en sorte que l'url soit rï¿½cupï¿½rï¿½e et ajoutï¿½e seulement ï¿½ la partie '?cat= x' pour plus de simplicitï¿½ en cas de changement de nom, etc*/
 
 //version en ligne
 site_url(),
@@ -29,7 +29,7 @@ site_url().'/cinema',
 
 	// informations sur la page
 	$info = site_url().$_SERVER['REQUEST_URI'];
-	$menu = '<div id="menu"> <ul>';
+	$menu = '<div class="menu"> <ul>';
 //fait apparaitre le chemin <<OUTILS DEV>>
 //NE PAS SUPPRIMER : permet de faire des essais
 	/*echo "<div class='essaicode'>";
@@ -40,7 +40,7 @@ site_url().'/cinema',
 	foreach($tab_menu_lien as $cle => $lien)
 	// foreach($tab_menu_lien as $cle=>$lien)
 	{		
-		// si le nom du fichier correspond à celui pointé par l'indice, alors on l'active
+		// si le nom du fichier correspond ï¿½ celui pointï¿½ par l'indice, alors on l'active
 		//edit : recherche l'URL de la page courante
 		/*if( $info == $lien )$menu .= "<li><a href=\"" . $lien . "\"><div class=\"drapeau-active\"><div class=\"drapeau-hautactive\"><div class=\"contenuongletactive\"";
 		//si le nom du fichier ne correspond on met l'onglet en mode normal
@@ -54,7 +54,7 @@ site_url().'/cinema',
 		$menu.='>'.$tab_menu_contenu[$cle].'</div></div><div class="drapeau-bas"></div></div></a></li>';
 	}
 	
-	$menu.="</ul>\n</div>"; /*fermeture UL et div ID="MENU"*/
+	$menu.="</ul>\n</div>"; /*fermeture UL et div class="menu"*/
 		
 	// on renvoie le code xHTML
 	return $menu;

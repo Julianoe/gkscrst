@@ -38,7 +38,7 @@
 
 		
 
-	<form method="get" id="searchform" action="<?php bloginfo('home'); ?>/">
+	<form method="get" class="searchform" action="<?php bloginfo('home'); ?>/">
 
 		<div>
 

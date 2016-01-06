@@ -1,7 +1,7 @@
 <?php get_header();  /* ouvrir header.php*/?>
 
-<div id="page">
-	<div id="content">
+<div class="page">
+	<div class="content">
 		<?php if(have_posts()) : ?>
 			<?php while(have_posts()) : the_post(); ?>
 				<div class="post" id="post-<?php the_ID();?>">
@@ -43,12 +43,12 @@
 			
 		<?php endif; ?>
 		
-	</div><!-- fermeture <div id="content"-->
+	</div><!-- fermeture <div class="content"-->
 
 
 <?php get_sidebar(); ?>
 
-</div> <!--fermeture <div id="page"-->
+</div> <!--fermeture <div class="page"-->
 
 <?php get_footer(); ?>
 </html>
