@@ -10,7 +10,7 @@ Geeks Curiosity by Julianoe || www.geeks-curiosity.net
 */
 
 body {
-  font-family: Myriad, "Lucida Grande", Helvetica, Sans-serif;
+  font-family: "Myriad", "Lucida Grande", Helvetica, Sans-serif;
   font-size: 0.9em;
   text-align: left;
   color: #475D69;
@@ -32,7 +32,8 @@ body {
 .header {
   position: relative;
   margin: auto;
-  font-family: Myriad, Trebuchet MS, Lucida Grande, Helvetica, Georgia, Sans-serif;
+  /*font-family: Myriad, Trebuchet MS, Lucida Grande, Helvetica, Georgia, Sans-serif;*/
+	font-family: "Myriad", "Lucida Grande", Helvetica, Sans-serif;
   width: 1070px;
   height: 300px;
   padding: 0;
@@ -97,13 +98,11 @@ h1.header {
   /*ATTENTION : si le contenu de l'onglet et plus grand que celui-ci cela peut gêner le cliquage des liens lorsque le drapeau est tiré*/
   /*permet un mouvement fluide du texte des onglets*/
   height: 71px;
-  /**/
   width: 96px;
-  /**/
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
   -o-transition: all 0.5s;
-  -ms-transition: all0.5s;
+  -ms-transition: all 0.5s;
   transition: all 0.5s;
 }
 .contenuongletactive {
