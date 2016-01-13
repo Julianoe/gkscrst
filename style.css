@@ -30,6 +30,10 @@ body {
   margin:0;
 }
 
+iframe{
+  max-width:100%;
+}
+
 .page {
   position: relative;
   /*margin: auto;*/
@@ -118,7 +122,18 @@ h1.header {
   -o-transition: all 0.5s;
   -ms-transition: all 0.5s;
   transition: all 0.5s;
+
+  /*ajout de texte pour remplacer les images textes*/
+  text-align: center;
+  vertical-align: middle;
+  display: inline-block;
+  font-size: 23px;
+  color: #E1DAE5;
 }
+.contenuonglet{
+
+}
+
 .contenuongletactive {
   height: 71px;
   margin-top: +63px;
@@ -559,7 +574,6 @@ blockquote {
   width: 100%;
   background-color: #FFFFFF;
   font-size: 14px;
-  line-height: 18px;
   font-family: Verdana, sans-serif;
   -moz-box-shadow: 2px 5px 9px #000000;
   -webkit-box-shadow: 2px 5px 9px #000000;
@@ -576,8 +590,6 @@ blockquote {
   color: #475D69;
   /*113343*/
   margin-left: 5px;
-  line-height: 45px;
-  height: 45px;
 }
 .sidebar ul li {
   padding: 0;
@@ -952,7 +964,8 @@ a.logo_social {
   margin-bottom: 10px;
 }
 
-@media only screen and (min-device-width:961px) {
+/*@media only screen and (min-device-width:961px)*/
+@media screen and (min-width:961px) {
   .headbar {
     margin-left: 0;
     /*-50*/

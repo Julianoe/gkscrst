@@ -1,14 +1,14 @@
 <?php
 if ( function_exists('register_sidebar') )
-register_sidebar(); //entrer en paramètre le nombre de colonnes de la sidebar
+register_sidebar(); //entrer en paramï¿½tre le nombre de colonnes de la sidebar
 
-add_theme_support( 'post-thumbnails' ); //ajout de la fonction qui permet l'utilisation des images à la Une
+add_theme_support( 'post-thumbnails' ); //ajout de la fonction qui permet l'utilisation des images ï¿½ la Une
 set_post_thumbnail_size( 680, 200, true ); // Miniatures de l'accueil
 add_image_size( 'miniature-archives', 680, 200 ); // Miniatures des archives
-//add_theme_support( 'post-thumbnails', array( 'post' ) ); // Ajouter les images à la une sur les articles uniquement
+//add_theme_support( 'post-thumbnails', array( 'post' ) ); // Ajouter les images ï¿½ la une sur les articles uniquement
 
 
-function removeCategoryListRel($output){//permet d'ajouter à worpress une fonction qui rend valide la créaltion de lien auprès du W3C (suppression de Rel attribut)
+function removeCategoryListRel($output){//permet d'ajouter ï¿½ worpress une fonction qui rend valide la crï¿½altion de lien auprï¿½s du W3C (suppression de Rel attribut)
   $output = str_replace(' rel="category"', '', $output);
   return $output;
 }
@@ -20,5 +20,17 @@ add_filter('the_category', 'removeCategoryListRel' );
 register_nav_menus( array(
  'primary-menu' => __( 'Menu Principal', 'ewdrav' ),
 ) );*/
-?>
 
+register_sidebar( $args );
+$args = array(
+	'name'          => __( 'Sidebar principale', 'theme_text_domain' ),
+	'id'            => 'unique-sidebar-id',
+	'description'   => 'Julien',
+  'class'         => '',
+	'before_widget' => '<div id="%1$s" class="widget %2$s">',
+	'after_widget'  => '</div>',
+	'before_title'  => '<h2 class="widgettitle">',
+	'after_title'   => '</h2>' );
+
+
+?>
