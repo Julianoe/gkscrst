@@ -9,19 +9,32 @@ Geeks Curiosity by Julianoe || www.geeks-curiosity.net
 
 */
 
+
+/*
+#F7931E
+#113343
+#3F5460
+#465C68
+#6A7B85
+
+*/
+
+
 body {
-  font-family: "Myriad", "Lucida Grande", Helvetica, Sans-serif;
   font-size: 0.9em;
+  font-family: "Myriad", "Lucida Grande", Helvetica, Sans-serif;
   text-align: left;
   color: #475D69;
   background-image: url('./images/background.png');
   background-repeat: repeat;
+  margin:0;
 }
+
 .page {
   position: relative;
-  margin: auto;
+  /*margin: auto;*/
   margin-top: 80px;
-  width: 970px;
+  width: 100%;
   padding: 0;
   z-index: 4;
   /*l'ID PAGE réuni les divs CONTENT et SIDEBAR. Cet ensemble est placé SOUS l'ID HEADER grâce à un margin top négatif (ici) et à un padding de marge dans les deux divs contenues*/
@@ -59,16 +72,9 @@ h1.header {
   margin-top: 0;
   float: left;
   position: absolute;
-  width: 1070px;
+  width: 100%;
 }
-.imgheadbar {
-  /*float: center;*/
-  position: absolute;
-  z-index: 6;
-  background-image: url('./images/bandeau5.png');
-  height: 69px;
-  width: 1070px;
-}
+
 .banner {
   position: relative;
   /*float: center;*/
@@ -78,6 +84,14 @@ h1.header {
   height: 340px;
   width: 970px;
   z-index: 4;
+}
+
+.imgheadbar{
+  position:absolute;
+  z-index:6;
+  background: #465C68;
+  height:58px;
+  width:100%;
 }
 
 /*||____/\ MENU /\____||*/
@@ -330,9 +344,7 @@ h1.header {
 /*||________/\ CONTENU /\_________||*/
 
 .content {
-  float: left;
   margin: 0;
-  width: 725px;
   padding-top: 75px;
   /*permet de laisser une marge pour glisser CONTENT sous HEADER*/
   margin-bottom: 50px;
@@ -342,8 +354,9 @@ h1.header {
   -webkit-box-shadow: 2px 5px 9px #000000;
   box-shadow: 2px 5px 9px #000000
 }
-.post {
-  padding: 0 25px;
+.post h2, .post .postmetadata, .post .post_content, .post .post_link {
+  padding-right: 25px;
+  padding-left: 25px;
 }
 .post a {
   color: #2F343B;
@@ -373,7 +386,7 @@ h1.header {
   /* #27181C;*/
 }
 .post_content p {
-  text-align: justify;
+  text-align: left;
 }
 
 /*contenu : liens*/
@@ -387,16 +400,16 @@ h1.header {
   text-decoration: underline;
 }
 .post_img {
-  text-align: center;
-  height: 200px;
-  width: auto;
-  /*largeur totale (avec border: 694px*/
-  border: solid 7px #405561;
-  -moz-border-radius: 0;
-  -webkit-border-radius: 0;
-  border-radius: 0;
-  overflow: hidden;
 }
+.post_img img{
+  width:100%;
+  height:auto;
+  vertical-align: middle;
+}
+.post_img a {
+  height:100%;
+}
+
 .post_link, .post_link a {
   /*lire la suite*/
   color: #F7931E;
@@ -501,7 +514,7 @@ blockquote {
 
 .content h2 {
   color: #475D69;
-  width: 702px;
+  /*width: 702px;*/
   /*élargissement*/
   margin-bottom: 0.3em;
 }
@@ -518,6 +531,7 @@ blockquote {
 .postmetadata {
   text-align: right;
   color: #475D69;
+  margin-bottom:14px;
 }
 .postmetadata p {
   font-size: 15px;
@@ -538,19 +552,18 @@ blockquote {
 /*||________/\ SIDEBAR /\_________||*/
 
 .sidebar {
-  float: right;
   padding-bottom: 20px;
   /*changer le padding du pied du bandeau*/
   padding-top: 60px;
   /*permet de laisser une marge pour glisser SIDEBAR sous HEADER*/
-  width: 224px;
+  width: 100%;
   background-color: #FFFFFF;
   font-size: 14px;
   line-height: 18px;
   font-family: Verdana, sans-serif;
   -moz-box-shadow: 2px 5px 9px #000000;
   -webkit-box-shadow: 2px 5px 9px #000000;
-  box-shadow: 2px 5px 9px #000000
+  box-shadow: 2px 5px 9px #000000;
 }
 .sidebar ul {
   list-style-type: none;
@@ -588,8 +601,7 @@ blockquote {
   margin-right: auto;
   padding: 5px 0 0 0;
   clear: both;
-  /*équivalent d'un retour à la ligne : place l'elemnt en bas en tte situation*/
-  width: 860px;
+  width: 100%;
   color: #D4DADE;
 }
 .footer p {
@@ -938,4 +950,53 @@ a.logo_social {
   padding: 15px;
   margin-right: 15px;
   margin-bottom: 10px;
+}
+
+@media only screen and (min-device-width:961px) {
+  .headbar {
+    margin-left: 0;
+    /*-50*/
+    margin-top: 0;
+    float: left;
+    position: absolute;
+    width: 1070px;
+  }
+  .imgheadbar {
+    /*float: center;*/
+    background: url('./images/bandeau5.png');
+    width: 1070px;
+    height:69px;
+  }
+  .page{
+    position: relative;
+    margin: auto;
+    margin-top: 80px;
+    width: 970px;
+    padding: 0;
+    z-index: 4;
+    /*l'ID PAGE réuni les divs CONTENT et SIDEBAR. Cet ensemble est placé SOUS l'ID HEADER grâce à un margin top négatif (ici) et à un padding de marge dans les deux divs contenues*/
+  }
+  .content {
+    float: left;
+    width: 725px;
+  }
+  .content h2 {
+    color: #475D69;
+    margin-bottom: 0.3em;
+  }
+  .post_img {
+    border: solid 5px #405561;
+  }
+  .post .post_img{
+    margin-right: 25px;
+    margin-left: 25px;
+    padding-bottom: 0;
+  }
+  .post_content p {
+    text-align: justify;
+  }
+  .sidebar {
+    float: right;
+    width: 224px;
+  }
 }
