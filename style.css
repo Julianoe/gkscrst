@@ -98,14 +98,33 @@ h1.header {
   /*ATTENTION : si le contenu de l'onglet et plus grand que celui-ci cela peut gêner le cliquage des liens lorsque le drapeau est tiré*/
   /*permet un mouvement fluide du texte des onglets*/
   height: 71px;
-  width: 96px;
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
   -o-transition: all 0.5s;
   -ms-transition: all 0.5s;
   transition: all 0.5s;
-  margin-left:5px;
+
+  /*ajout de texte pour remplacer les images textes*/
+  text-align: center;
+  vertical-align: middle;
+  display: inline-block;
+  font-size: 23px;
+  color: #E1DAE5;
+  width:70px;
+  margin-left: 5px;
+  line-height: 90%;
+  padding-top: 10px;
 }
+.contenuonglet span{
+}
+
+.menu-item-1828 .contenuonglet span{
+  background: url("http://127.0.0.1/geekscuriosity/wp-content/themes/GeeksCuriosity/images/home.png") no-repeat;
+  display: inline-block;
+  width:44px;
+  height:37px;
+}
+
 .contenuongletactive {
   height: 71px;
   margin-top: +63px;
@@ -128,14 +147,14 @@ h1.header {
   margin-left: auto;
   margin-right: auto;
   position: relative;
-  height: 100px;
+  /*height: 100px;*/
   width: 96px;
   /*z-index:3;*/
   z-index: 8;
   margin-top: -20px;
 }
 .drapeau-haut {
-  float: left;
+  /*float: left;*/
   margin-left: auto;
   margin-right: auto;
   position: relative;
@@ -151,6 +170,7 @@ h1.header {
   -o-transition: all 0.5s;
   -ms-transition: all 0.5s;
   transition: all 0.5s;
+  text-align:center;
 }
 .drapeau-bas {
   /*footer des drapeaux*/
@@ -211,7 +231,7 @@ h1.header {
 .drapeau:hover .contenuonglet {
   /*height:121px;*/
   height: 71px;
-  width: 96px;
+  /*width: 96px;*/
   margin-top: +63px;
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;

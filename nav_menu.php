@@ -23,8 +23,8 @@
 		echo $menu;*/
 
 		//ajout du menu
-		$drapeaubefore = '<div class="drapeau"><div class="drapeau-haut"><div class="contenuonglet">';
-		$drapeauafter = '</div></div><div class="drapeau-bas"></div></div>';
+		$drapeaubefore = '<div class="drapeau"><div class="drapeau-haut"><div class="contenuonglet"><span>';
+		$drapeauafter = '</span></div></div><div class="drapeau-bas"></div></div>';
 		wp_nav_menu( array(
 			'theme_location'  => '',
 			'menu' => 'menu-principal',
@@ -44,6 +44,8 @@
 			'walker'          => ''
 		) );
 	?>
+
+
 	<form method="get" class="searchform" action="<?php bloginfo('home'); ?>/">
 		<div>
 			<input type="text" value="<?php the_search_query(); ?>" name="s" id="s" />
