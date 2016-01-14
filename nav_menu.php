@@ -1,5 +1,4 @@
 <div class="headbar">
-	<div class="imgheadbar"></div>
 	<!--<img class="imgheadbar" src="./images/bandeau.png" />-->
 	<div class="logossocial">
 				<!--<div  class="logofb"><a href="https://www.facebook.com/Geeks.Curiosity" target="_blank"><img src="./images/fb.png" alt="logo de facebook"/></a></div>-->
@@ -48,9 +47,10 @@
 
 	<form method="get" class="searchform" action="<?php bloginfo('home'); ?>/">
 		<div>
-			<input type="text" value="<?php the_search_query(); ?>" name="s" id="s" />
+			<span class="searchform-gauche"></span><input type="text" value="<?php the_search_query(); ?>" name="s" id="s" /><span class="searchform-droite"></span>
 			<!--<input type="submit" id="searchsubmit" value="" />-->
 		</div>
 	</form>
+	<div class="imgheadbar"></div>
 
 </div>

@@ -68,6 +68,7 @@ h1.header {
   background-image: url('./images/bandeau5.png');
   height: 69px;
   width: 1070px;
+  top:0;
 }
 .banner {
   position: relative;
@@ -97,7 +98,7 @@ h1.header {
 .contenuonglet {
   /*ATTENTION : si le contenu de l'onglet et plus grand que celui-ci cela peut gêner le cliquage des liens lorsque le drapeau est tiré*/
   /*permet un mouvement fluide du texte des onglets*/
-  height: 71px;
+  /*height: 71px;*/
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
   -o-transition: all 0.5s;
@@ -229,9 +230,6 @@ h1.header {
   transition: all 0.5s;
 }
 .drapeau:hover .contenuonglet {
-  /*height:121px;*/
-  height: 71px;
-  /*width: 96px;*/
   margin-top: +63px;
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
@@ -246,17 +244,15 @@ h1.header {
 .searchform {
   float: right;
   position: absolute;
-  margin-left: 785px;
+  margin-left: 800px;
   z-index: 8;
-  margin-top: -2px;
   border: 0;
+  padding-top:2px;
 }
 .searchform input {
-  margin-left: +143px;
-  padding: 4px 4px 4px 10px;
   height: 31px;
   width: 59px;
-  background: url('./images/research2-1.png')right no-repeat;
+  background: url('./images/research-fond.png') repeat-x;
   text-indent: 10px;
   border: 0;
   color: #475D69;
@@ -266,31 +262,26 @@ h1.header {
   -ms-transition: all 0s;
   transition: all 0.75s;
 }
-.searchform input:hover {
-  margin-left: +87px;
+
+.searchform-droite{
+  background: url('./images/research-droite.png') no-repeat;
+  width:32px;
+  height: 31px;
+  float:right;
+}
+.searchform-gauche{
+  background: url('./images/research-gauche.png') no-repeat;
+  width:14px;
+  height: 31px;
+  float:left;
+}
+.searchform input:hover, .searchform input:focus {
   width: 115px;
-  background: url('./images/research2-2.png')right no-repeat;
   text-indent: 15px;
-  border: 0;
-  color: #475D69;
   -webkit-transition: all 0.75s;
   -moz-transition: all 0.75s;
   -o-transition: all 0.75s;
   -ms-transition: all 0s;
-  transition: all 0.75s;
-}
-.searchform input:focus {
-  margin-left: 0;
-  /*width:202px;*/
-  width: 202px;
-  background: url('./images/research2-3.png')right no-repeat;
-  text-indent: 15px;
-  border: 0;
-  color: #475D69;
-  -webkit-transition: all 0.75s;
-  -moz-transition: all 0.75s;
-  -o-transition: all 0.75s;
-  -ms-transition: all 0;
   transition: all 0.75s;
 }
 .searchform-oops {
