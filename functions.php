@@ -33,4 +33,11 @@ $args = array(
 	'after_title'   => '</h2>' );
 
 
+  //ajout d'un menu personnalisable
+  function register_my_menu() {
+    register_nav_menu('menu-princial',__( 'Menu principal perso' ));
+  }
+  add_action( 'init', 'register_my_menu' );
+
+
 ?>

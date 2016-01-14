@@ -1,7 +1,5 @@
 <?php
 
-wp_nav_menu( array( 'theme_location' => 'menu-principal' ) );
-
 function affiche_menu()
 {
 	// tableaux contenant les liens d'acc�s et le contenu � afficher
