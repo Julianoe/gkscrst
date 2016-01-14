@@ -398,16 +398,13 @@ h1.header {
   /*font-weight: bold;*/
   text-decoration: underline;
 }
-.post_img {
-  text-align: center;
-  height: 200px;
-  width: auto;
-  /*largeur totale (avec border: 694px*/
-  border: solid 7px #405561;
-  -moz-border-radius: 0;
-  -webkit-border-radius: 0;
-  border-radius: 0;
-  overflow: hidden;
+.post_img img{
+  width:100%;
+  height:auto;
+  vertical-align: middle;
+}
+.post_img a {
+  height:100%;
 }
 .post_link, .post_link a {
   /*lire la suite*/
