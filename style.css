@@ -533,10 +533,12 @@ blockquote {
 .postmetadata {
   text-align: right;
   color: #475D69;
-  margin-bottom:14px;
+  /*margin-bottom:14px;*/
+  margin-top:1.2em;
+  margin-bottom:2.4em;
 }
 .postmetadata p {
-  font-size: 15px;
+  font-size: 1em;
   /*color: #39B54A;*/
   /*color: #7F1600;*/
   /*color:#733D53;*/
