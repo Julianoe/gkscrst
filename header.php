@@ -14,8 +14,8 @@
     <link rel="alternate" type="text/xml" title="RSS .92" href="<?php bloginfo('rss_url'); ?>" />
     <link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="<?php bloginfo('atom_url'); ?>" />
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
-    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon"/>
-    <link rel="icon" href="./favicon.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" href="<?php bloginfo('template_url');?>/favicon.ico" type="image/x-icon"/>
+    <link rel="icon" href="<?php bloginfo('template_url');?>/favicon.ico" type="image/x-icon"/>
     <?php wp_get_archives('type=monthly&format=link'); ?>
     <?php //comments_popup_script(); // off by default ?>
     <?php wp_head(); ?>
@@ -31,21 +31,14 @@
     }(document, 'script', 'facebook-jssdk'));
     </script>
     <!--<div class="page">--> <!--Cette div est d�cplac�e hors du header afin de rendre ce dernier totalement ind�pendant de la partie CONTENT/FOOTER-->
-    <div class="header">
-      <a href="<?php bloginfo('url'); ?>"><div class="banner"></div></a>
+    <header class="header">
+      <div class="banner">
+        <a href="<?php bloginfo('url'); ?>">
+          <h1 class="blog-title"><span>Geeks</span><br>Curiosity</h1>
+          <img src="<?php bloginfo('template_url');?>/images/banner-white.png"/>
+        </a>
+      </div>
       <!--informations du blog-->
-      <!--<div>
-      <h1><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></h1>
-      <p class="description"><?php bloginfo('description'); ?></p>
-    </div>-->
-    <div>
-      <?php
-      /*utilise le syst�me de menu de wordpress*/
-      //wp_nav_menu( array( 'theme_location' => 'primary' ) );
-      //include(TEMPLATEPATH . '/searchform.php');
-      /*utilise un template perso de menu*/
-      include(TEMPLATEPATH . '/nav_menu.php');
-      //include(TEMPLATEPATH . '/searchform.php');
-      ?>
-    </div>
-  </div> <!--fermeture du div class="header"-->
+        <!--<p class="description"><?php bloginfo('description'); ?></p>-->
+      <?php include(TEMPLATEPATH . '/nav_menu.php'); ?>
+    </header> <!--fermeture du header class="header"-->

@@ -19,5 +19,6 @@
   ga('send', 'pageview');
 
 </script>
+<script type="text/javascript" src="<?php bloginfo('template_url') ?>/js/main.js"></script>
 
 <?php wp_footer(); ?>
