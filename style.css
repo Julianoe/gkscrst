@@ -76,10 +76,16 @@ body {
   background-repeat: repeat;
   margin:0;
 }
-iframe{
-  max-width:100%;
+.video embed,
+.video object,
+.video iframe, iframe {
+	width: 100% !important;
+	height: auto;
 }
-
+img, .wp-caption {
+	max-width: 100% !important;
+	height: auto;
+}
 .page {
   position: relative;
   width: 100%;
@@ -202,10 +208,7 @@ h1.blog-title{
   line-height: 90%;
   padding-top: 10px;
 }
-.contenuonglet span{
-}
-
-.menu-item-1828 .contenuonglet span{
+.menu-item-home .contenuonglet span{
   background: url("http://127.0.0.1/geekscuriosity/wp-content/themes/GeeksCuriosity/images/home.png") no-repeat;
   display: inline-block;
   width:44px;
@@ -918,7 +921,7 @@ a:hover {
 /*\\_______________________________________________//*/
 
 
-@media screen and (min-width:961px) {
+@media only screen and (min-width:961px) {
   .page {
     margin: auto;
     margin-top: 80px;
@@ -985,7 +988,7 @@ a:hover {
 }
 
 
-@media screen and (max-width:760px){
+@media only screen and (max-width:760px){
   .headbar{
     background: #465C68;
     position:relative;
@@ -1096,4 +1099,5 @@ a:hover {
   .banner{
     background:rgba(255, 255, 255, 0.3);
   }
+	#cboxTitle{display:none !important;}
 }
