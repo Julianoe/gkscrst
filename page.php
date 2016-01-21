@@ -1,4 +1,4 @@
-<?php get_header();  /* ouvrir header.php*/?>
+<?php get_header(); ?>
 <div class="page">
 	<div class="content">
 		<?php if(have_posts()) : ?>
@@ -21,7 +21,7 @@
 			<h2>Oooopppsss...</h2>
 			<p>Désolé, mais vous cherchez quelque chose qui ne se trouve pas ici .</p>
 
-			<?php //include (TEMPLATEPATH . "/searchform.php"); ?>
+			<!--include (TEMPLATEPATH . "/searchform.php");-->
 
 		<?php endif; ?>
 

@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
   <title><?php bloginfo('name') ?><?php if ( is_404() ) : ?> &#124; <?php _e('Not Found') ?><?php elseif ( is_home() ) : ?> &#124; <?php bloginfo('description') ?><?php else : ?> &#124; <?php wp_title() ?><?php endif ?></title>
-    <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
+    <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>" charset="<?php bloginfo('charset'); ?>" />
     <meta name="generator" content="WordPress <?php bloginfo('version'); ?>" />
     <!-- leave this for stats -->
     <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css"/>
@@ -13,7 +13,6 @@
     <link rel="shortcut icon" href="<?php bloginfo('template_url');?>/images/favicon.ico" type="image/x-icon"/>
     <link rel="icon" href="<?php bloginfo('template_url');?>/favicon.ico" type="image/x-icon"/>
     <?php wp_get_archives('type=monthly&format=link'); ?>
-    <?php //comments_popup_script(); // off by default ?>
     <?php wp_head(); ?>
   </head>
 

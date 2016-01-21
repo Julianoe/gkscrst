@@ -1,5 +1,4 @@
-<?php get_header();  /* ouvrir header.php*/?>
-
+<?php get_header(); ?>
 <div class="page">
 	<div class="content">
 		<?php if(have_posts()) : ?>

@@ -31,7 +31,7 @@
     <li>
       <h2>Archives</h2>
       <ul>
-        <?php //wp_get_archives('type=monthly'); ?>
+        <!--//wp_get_archives('type=monthly');-->
         <?php  wp_get_archives( array( 'type' => 'monthly', 'limit' => 12 ) ); ?>
       </ul>
     </li>

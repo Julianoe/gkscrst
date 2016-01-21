@@ -1,6 +1,4 @@
-<?php get_header();  /* ouvrir header.php*/?>
-
-
+<?php get_header(); ?>
 <div class="page">
 	<div class="content">
 	<?php if(have_posts()) :?>
@@ -44,7 +42,7 @@
 			<div class="post_content">
 				<h2>Page introuvable</h2>
 				<p>D&eacute;sol&eacute; mais ce que vous cherchez est introuvable ou n'&eacute;xiste pas.</p>
-				<!--<?php //include (TEMPLATEPATH . "/searchform.php"); ?>-->
+				<!-- //include (TEMPLATEPATH . "/searchform.php");-->
 				<br/>
 			</div>
 		</div>

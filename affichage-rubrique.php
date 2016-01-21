@@ -1,16 +1,7 @@
-<?php
-/*
- * @package WordPress
- * @subpackage Finalclap
- *
- * Template Name: Rubrique
-**/
-get_header();
-?>
+<?php get_header(); ?>
 <?php get_sidebar(); ?>
 
 <?php
-
 // AFFICHAGE DE LA RUBRIQUE
 /*récupère l'ID de la catégorie parente (rubrique) dans l'URL*/
 $rubrique = $_GET['rub_id'] ;

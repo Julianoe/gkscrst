@@ -36,10 +36,10 @@
 				</ul>
 			</nav>
 
-			<?php
 
-				//ajout du menu
-				$drapeaubefore = '<div class="drapeau"><div class="drapeau-haut"><div class="contenuonglet"><span>';
+
+
+				<?php /*ajout du menu*/ $drapeaubefore = '<div class="drapeau"><div class="drapeau-haut"><div class="contenuonglet"><span>';
 				$drapeauafter = '</span></div></div><div class="drapeau-bas"></div></div>';
 				wp_nav_menu( array(
 					'theme_location'  => '',
