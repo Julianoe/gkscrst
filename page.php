@@ -19,9 +19,9 @@
 			<?php else : ?>
 			<!-- erreur pas de page trouv�e � cette url -->
 			<h2>Oooopppsss...</h2>
-			<p>D�sol�, mais vous cherchez quelque chose qui ne se trouve pas ici .</p>
+			<p>Désolé, mais vous cherchez quelque chose qui ne se trouve pas ici .</p>
 
-			<?php include (TEMPLATEPATH . "/searchform.php"); ?>
+			<?php //include (TEMPLATEPATH . "/searchform.php"); ?>
 
 		<?php endif; ?>
 

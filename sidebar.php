@@ -1,7 +1,6 @@
 <div class="sidebar">
-
   <ul>
-    <!--VERSION2-->
+    <!--VERSION2 : inclusion de la possibilité d'utiliser la sidebar dynamique-->
     <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar() ) : ?>
 
     <!--module des cat�gories-->
@@ -32,7 +31,8 @@
     <li>
       <h2>Archives</h2>
       <ul>
-        <?php wp_get_archives('type=monthly'); ?>
+        <?php //wp_get_archives('type=monthly'); ?>
+        <?php  wp_get_archives( array( 'type' => 'monthly', 'limit' => 12 ) ); ?>
       </ul>
     </li>
     <?php endif; ?>
@@ -40,8 +40,8 @@
   <ul>
     <li>
       <h2>Connexion</h2>
-      <ul><a href="<?php site_url(); ?>/wp-login.php">S'identifier</a></ul>
-      <ul><a href="<?php site_url(); ?>/wp-login.php?action=register">Nous rejoindre</a></ul>
+      <ul><a href="<?php bloginfo('home'); ?>/wp-login.php">S'identifier</a></ul>
+      <ul><a href="<?php bloginfo('home'); ?>/wp-login.php?action=register">Nous rejoindre</a></ul>
     </li>
   </ul>
 </div>

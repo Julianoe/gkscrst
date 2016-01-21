@@ -42,7 +42,7 @@ MENU BOUTON
 
 
 /*||____________/\ FONTS /\_____________||*/
-@font-face {
+/*@font-face {
 	font-family: 'GearedSlab-Extrabold';
 	src: url('fonts/GearedSlab-Extrabold.eot');
 	src: local('☺'), url('fonts/GearedSlab-Extrabold.woff') format('woff'), url('fonts/GearedSlab-Extrabold.ttf') format('truetype'), url('fonts/GearedSlab-Extrabold.svg') format('svg');
@@ -55,7 +55,7 @@ MENU BOUTON
 	src: local('☺'), url('fonts/GearedSlab.woff') format('woff'), url('fonts/GearedSlab.ttf') format('truetype'), url('fonts/GearedSlab.svg') format('svg');
 	font-weight: normal;
 	font-style: normal;
-}
+}*/
 @font-face {
 	font-family: 'GearedSlab-Bold';
 	src: url('fonts/GearedSlab-Bold.eot');

@@ -36,4 +36,5 @@
 <?php get_sidebar(); ?>
 </div> <!--fermeture <div class="page"-->
 <?php get_footer(); ?>
+</body>
 </html>
