@@ -14,6 +14,9 @@
 					</div>
 					<div class="post_content">
 						<?php the_content(); ?>
+						<div class="light_separator"></div>
+						<br/>
+						<div class="fb-like" data-href="https://www.facebook.com/Geeks.Curiosity" data-send="true" data-show-faces="false"></div> <a class="twitter-follow-button" href="https://twitter.com/geeks_curiosity" data-show-count="true" data-lang="fr" data-size="large" data-show-screen-name="false">Suivre @geeks_curiosity</a>
 					</div>
 
 				</div>
