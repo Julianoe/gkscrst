@@ -734,15 +734,15 @@ blockquote {
   font-family: Trebuchet MS, Arial, Hevletica, Sans-serif;
   font-size: 0.9em;
 }
-.commentstemplate-separator {
+/*.commentstemplate-separator {
   width: 650px;
   height: 3px;
   margin-top: 25px;
   margin-right: auto;
   margin-left: auto;
-  /*margin: 0 10px 0 10px;*/
+  margin: 0 10px 0 10px;
   background-image: url('./images/separator3.png');
-}
+}*/
 /*\\____________________________________//*/
 
 
