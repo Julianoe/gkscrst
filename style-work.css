@@ -431,12 +431,12 @@ h1.blog-title{
 /*texte du contenu*/
 
 .post_content {
-  font-size: 14px;
+  /*font-size: 14px;*/
   color: #475D69;
   /* #27181C;*/
 }
 .post_content p {
-  text-align: justify;
+  /*text-align: justify;*/
 }
 /*contenu : liens*/
 .post_content a {
@@ -985,8 +985,13 @@ a:hover {
     margin-left: 25px;
     padding-bottom: 0;
   }
+	.post_content{
+		font-size:1.4em;
+	}
   .post_content p {
-    text-align: justify;
+		font-family: serif;
+		line-height: 1.5;
+		text-align: left;
   }
   .sidebar {
     float: right;
