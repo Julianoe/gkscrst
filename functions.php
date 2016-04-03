@@ -1,7 +1,4 @@
 <?php
-// if ( function_exists('register_sidebar') )
-// register_sidebar();
-//entrer en param�tre le nombre de colonnes de la sidebar
 
 add_theme_support( 'post-thumbnails' ); //ajout de la fonction qui permet l'utilisation des images � la Une
 set_post_thumbnail_size( 680, 200, true ); // Miniatures de l'accueil
@@ -16,38 +13,19 @@ function removeCategoryListRel($output){//permet d'ajouter � worpress une fonc
 add_filter('wp_list_categories', 'removeCategoryListRel');
 add_filter('the_category', 'removeCategoryListRel' );
 
-/*
-// This theme uses wp_nav_menu() in one location.
-register_nav_menus( array(
- 'primary-menu' => __( 'Menu Principal', 'ewdrav' ),
-) );*/
-//
-// register_sidebar( $args );
-// $args = array(
-// 	'name'          => __( 'Sidebar principale', 'theme_text_domain' ),
-// 	'id'            => 'unique-sidebar-id',
-// 	'description'   => 'Julien',
-//   'class'         => '',
-// 	'before_widget' => '<div id="%1$s" class="widget %2$s">',
-// 	'after_widget'  => '</div>',
-// 	'before_title'  => '<h2 class="widgettitle">',
-// 	'after_title'   => '</h2>' );
 
-
-  //ajout d'un menu personnalisable
-  function register_my_menu() {
-    register_nav_menu('menu-princial',__( 'Menu principal perso' ));
-  }
-  add_action( 'init', 'register_my_menu' );
+//ajout d'un menu personnalisable
+function register_my_menu() {
+  register_nav_menu('menu-princial',__( 'Menu principal perso' ));
+}
+add_action( 'init', 'register_my_menu' );
 
 
 
-  //ajouter une meilleure gestion des div vidéos en les encadrant d'une div
-  add_filter( 'embed_oembed_html', 'custom_oembed_filter', 10, 4 ) ;
+//ajouter une meilleure gestion des div vidéos en les encadrant d'une div
+add_filter( 'embed_oembed_html', 'custom_oembed_filter', 10, 4 ) ;
 
-  function custom_oembed_filter($html, $url, $attr, $post_ID) {
-      $return = '<div class="video-container">'.$html.'</div>';
-      return $return;
-  }
-
-?>
+function custom_oembed_filter($html, $url, $attr, $post_ID) {
+    $return = '<div class="video-container">'.$html.'</div>';
+    return $return;
+}?>
