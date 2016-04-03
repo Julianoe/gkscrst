@@ -26,7 +26,7 @@
     </script>
     </li>
     <!--module sites amis-->
-    <?php get_links_list(); ?>
+    <?php //get_links_list(); ?>
     <!--module des archives-->
     <li>
       <h2>Archives</h2>

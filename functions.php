@@ -1,6 +1,7 @@
 <?php
-if ( function_exists('register_sidebar') )
-register_sidebar(); //entrer en param�tre le nombre de colonnes de la sidebar
+// if ( function_exists('register_sidebar') )
+// register_sidebar();
+//entrer en param�tre le nombre de colonnes de la sidebar
 
 add_theme_support( 'post-thumbnails' ); //ajout de la fonction qui permet l'utilisation des images � la Une
 set_post_thumbnail_size( 680, 200, true ); // Miniatures de l'accueil
@@ -20,17 +21,17 @@ add_filter('the_category', 'removeCategoryListRel' );
 register_nav_menus( array(
  'primary-menu' => __( 'Menu Principal', 'ewdrav' ),
 ) );*/
-
-register_sidebar( $args );
-$args = array(
-	'name'          => __( 'Sidebar principale', 'theme_text_domain' ),
-	'id'            => 'unique-sidebar-id',
-	'description'   => 'Julien',
-  'class'         => '',
-	'before_widget' => '<div id="%1$s" class="widget %2$s">',
-	'after_widget'  => '</div>',
-	'before_title'  => '<h2 class="widgettitle">',
-	'after_title'   => '</h2>' );
+//
+// register_sidebar( $args );
+// $args = array(
+// 	'name'          => __( 'Sidebar principale', 'theme_text_domain' ),
+// 	'id'            => 'unique-sidebar-id',
+// 	'description'   => 'Julien',
+//   'class'         => '',
+// 	'before_widget' => '<div id="%1$s" class="widget %2$s">',
+// 	'after_widget'  => '</div>',
+// 	'before_title'  => '<h2 class="widgettitle">',
+// 	'after_title'   => '</h2>' );
 
 
   //ajout d'un menu personnalisable
@@ -39,5 +40,14 @@ $args = array(
   }
   add_action( 'init', 'register_my_menu' );
 
+
+
+  //ajouter une meilleure gestion des div vidéos en les encadrant d'une div
+  add_filter( 'embed_oembed_html', 'custom_oembed_filter', 10, 4 ) ;
+
+  function custom_oembed_filter($html, $url, $attr, $post_ID) {
+      $return = '<div class="video-container">'.$html.'</div>';
+      return $return;
+  }
 
 ?>

@@ -1,6 +1,6 @@
 <div class="footer">
 	<p>
-		Copyright &#169; <?php print(date(Y)); ?> <strong><?php bloginfo('name'); ?></strong>
+		Copyright &#169; 2016 <strong><?php bloginfo('name'); ?></strong>
 		<br />
 		Blog propuls&eacute; par <a href="http://wordpress.org/">WordPress</a> et con&ccedil;u par <strong>Julianoe</strong>
 		<br />
