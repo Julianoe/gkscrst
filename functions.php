@@ -21,6 +21,16 @@ function register_my_menu() {
 add_action( 'init', 'register_my_menu' );
 
 
+// adding the styles and scripts
+function geeks_curiosity_scripts() {
+	// Add Normaliz
+	wp_enqueue_style( 'normalize', get_template_directory_uri() . '/css/normalize.css', array(), '3.0.2' );
+  // Add Skeleton
+	wp_enqueue_style( 'skeleton', get_template_directory_uri() . '/css/skeleton.css', array(), '2.0.4' );
+	// Theme stylesheet.
+	wp_enqueue_style( 'geeks-curiosity', get_stylesheet_uri() );
+}
+add_action( 'wp_enqueue_scripts', 'geeks_curiosity_scripts' );
 
 //ajouter une meilleure gestion des div vidéos en les encadrant d'une div
 add_filter( 'embed_oembed_html', 'custom_oembed_filter', 10, 4 ) ;
