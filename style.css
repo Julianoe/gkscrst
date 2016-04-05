@@ -844,7 +844,8 @@ a:hover {
   margin-right: auto;
   margin-left: auto;
 }
-.post_content img {
+.post_content img.aligncenter {
+	/*quid des images qui ne sont pas de l'article ?*/
   padding: 0px;
   max-width: 100%;
   height: auto;
@@ -1120,7 +1121,7 @@ a:hover {
 }
 
 @media only screen and (max-width:480px){
-	.post_content img {
+	.post_content img.aligncenter {
 		width:100%
 	}
 	.post_content img.alignright, .post_content img.alignleft{
