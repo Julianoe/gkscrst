@@ -201,12 +201,13 @@ h1.blog-title{
   text-align: center;
   vertical-align: middle;
   display: inline-block;
-  font-size: 23px;
+  font-size: 20px;
   color: #E1DAE5;
   width:70px;
   margin-left: 5px;
   line-height: 90%;
   padding-top: 10px;
+	word-break: break-all;
 }
 .menu-item-home .contenuonglet span{
 	background: url("./images/home.png") no-repeat;
