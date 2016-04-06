@@ -56,4 +56,10 @@ add_filter( 'embed_oembed_html', 'custom_oembed_filter', 10, 4 ) ;
 function custom_oembed_filter($html, $url, $attr, $post_ID) {
     $return = '<div class="video-container">'.$html.'</div>';
     return $return;
-}?>
+}
+
+// personnalisation of the login screen
+function geeks_curiosity_login() {
+  wp_enqueue_style( 'custom-login', get_template_directory_uri() . '/css/admin.css' );
+}
+add_action( 'login_enqueue_scripts', 'geeks_curiosity_login' );?>
