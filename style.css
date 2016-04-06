@@ -763,6 +763,14 @@ a:hover {
   /*color: #7F1600;*/
   text-decoration: underline;
 }
+
+.button-primary > a.post-edit-link{
+	color:#FFF;
+}
+.button-primary > a.post-edit-link:hover{
+	text-decoration: underline;
+}
+
 /*\\____________________________________//*/
 
 
@@ -936,6 +944,10 @@ a:hover {
 }
 /*\\_______________________________________________//*/
 
+
+.dashicons-playlist-video{
+	font-size:18px;
+}
 
 @media only screen and (min-width:961px) {
   .page {
