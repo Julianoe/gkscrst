@@ -344,7 +344,7 @@ h1.blog-title{
 	position: relative;
 }
 .searchform input[type="text"] {
-  height: 30px;
+  height: 31px;
   width: 59px;
   background: url('./images/research-fond.png') repeat-x;
   text-indent: 10px;
