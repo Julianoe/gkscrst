@@ -79,11 +79,11 @@ body {
 .video embed,
 .video object,
 .video iframe, iframe {
-	width: 100% !important;
+	max-width: 100% !important;
 	/*height: auto;*/
 }
 img, .wp-caption {
-	max-width: 100% !important;
+	/*max-width: 100% !important;*/
 	/*height: auto;*/
 }
 .page {
@@ -413,7 +413,7 @@ input[type="submit"].searchform-bouton{
 
 /*Titre de l'article dans la page ARTICLE*/
 
-.single_title {
+.single_title, .taxonomy_title {
   text-transform: uppercase;
   font-family: Arial;
   text-align: center;
@@ -514,6 +514,7 @@ blockquote {
   position: relative;
   height: 65px;
   width: 100%;
+	clear:both;
 }
 .page_prev {
   background-image: url('./images/page_precedente2.png');
@@ -617,6 +618,9 @@ blockquote {
 }
 .sidebar a {
   color: #475D69;
+}
+.sidebar .textwidget {
+	padding: 0 10px;
 }
 
 /*\\______________________________//*/
@@ -843,6 +847,7 @@ a:hover {
   display: block;
   margin-right: auto;
   margin-left: auto;
+	text-align: center;
 }
 .post_content img.aligncenter {
 	/*quid des images qui ne sont pas de l'article ?*/
