@@ -81,6 +81,6 @@
 			?>
 
 
-			<form method="get" class="searchform" action="<?php bloginfo('home'); ?>/"><span class="searchform-gauche"></span><input type="text" value="<?php the_search_query(); ?>" name="s" id="s" /><input class="searchform-bouton" type="submit" id="searchsubmit" value="" /></form>
+			<form method="get" class="searchform" action="<?php echo get_home_url(); ?>/"><span class="searchform-gauche"></span><input type="text" value="<?php the_search_query(); ?>" name="s" id="s" /><input class="searchform-bouton" type="submit" id="searchsubmit" value="" /></form>
 			<div class="imgheadbar"></div>
 		</div> <!--fermeture de la headbar-->

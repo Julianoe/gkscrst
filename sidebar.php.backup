@@ -40,8 +40,8 @@
   <ul>
     <li>
       <h2>Connexion</h2>
-      <ul><a href="<?php bloginfo('home'); ?>/wp-login.php">S'identifier</a></ul>
-      <ul><a href="<?php bloginfo('home'); ?>/wp-login.php?action=register">Nous rejoindre</a></ul>
+      <ul><a href="<?php echo get_home_url(); ?>/wp-login.php">S'identifier</a></ul>
+      <ul><a href="<?php echo get_home_url(); ?>/wp-login.php?action=register">Nous rejoindre</a></ul>
     </li>
   </ul>
 </div>

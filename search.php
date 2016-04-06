@@ -18,8 +18,10 @@
 			<?php else : ?>
 			<div class="post">
 			<!--Erreur aucun resultat-->
-				<h2>Aucun article trouv&eacute;. Essayer une autre recherche ?</h2>
-				<?php include (TEMPLATEPATH . '/searchform.php'); ?>
+				<div ="container">
+					<h2>Aucun article trouv&eacute;. Essayer une autre recherche ?</h2>
+					<?php include (TEMPLATEPATH . '/searchform.php'); ?>
+				</div>
 			</div>
 			<br/>
 			<br/>
