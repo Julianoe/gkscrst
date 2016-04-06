@@ -207,7 +207,7 @@ h1.blog-title{
   margin-left: 5px;
   line-height: 90%;
   padding-top: 10px;
-	word-break: break-all;
+	word-break: keep-all;
 }
 .menu-item-home .contenuonglet span{
 	background: url("./images/home.png") no-repeat;
