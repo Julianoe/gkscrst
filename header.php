@@ -2,8 +2,8 @@
 <html lang="fr">
 <head>
   <title>
-    <?php if ( is_404() ) : ?> &#124; <?php _e('Introuvable') ?>
-      <?php elseif ( is_home() ) : ?> &#124; <?php bloginfo('description') ?>
+    <?php if ( is_404() ) : ?> <?php _e('Introuvable') ?>
+      <?php elseif ( is_home() ) : ?> <?php bloginfo('description') ?>
       <?php //permet de n'avoir que le nom du post type dans les archives
       elseif ( is_post_type_archive() ) : post_type_archive_title(); ?>
       <?php else : ?><?php wp_title() ?>
