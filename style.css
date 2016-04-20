@@ -413,9 +413,11 @@ input[type="submit"].searchform-bouton{
 }
 
 /* adjusting the size for icon in title (temporary) */
-.post h2 .dashicons {
+h2 .dashicons {
 	font-size: 30px;
 	line-height: 1.3;
+	height:30px;
+	width:30px;
 }
 
 /*Titre de l'article dans la page ARTICLE*/
