@@ -14,9 +14,7 @@
         <span class="video-play-icon">
           <span class="dashicons dashicons-controls-play"></span>
         </span>
-
-
-
+        
       </a>
     </div>
   <?php } ?>

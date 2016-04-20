@@ -26,3 +26,4 @@
 	<br/><br/> <!--espace entre deux articles-->
 	<!--<div class="post_separator"></div>--><!--s�parateur-->
 	<div class="light_separator"></div>
+</div>
