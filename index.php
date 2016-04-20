@@ -4,6 +4,8 @@
 	<?php if(have_posts()) :?>
 	<?php while(have_posts()) : the_post(); ?>
 
+
+		<?php //post format video ?>
 		<?php if ( has_post_format( 'video' )) :?>
 			<?php get_template_part('content', get_post_format()); ?>
 		<?php else : ?>
@@ -24,9 +26,9 @@
 				?>-->
 			<!--Image � la Une (thumbnail)-->
 			<?php if ( has_post_thumbnail() ) { ?> <!-- dans la boucle-->
-			<div class="post_img"><a href="<?php the_permalink(); ?>" title="<?php the_title();?>">
-			<?php the_post_thumbnail(); ?>
-			</a></div>
+				<div class="post_img"><a href="<?php the_permalink(); ?>" title="<?php the_title();?>">
+				<?php the_post_thumbnail(); ?>
+				</a></div>
 			<?php } ?>
 			<!--afficher un extrait de l'article (en page d'accueil)-->
 			<div class="post_content">
@@ -56,7 +58,7 @@
 
 	<?php endif; ?>
 	</div><!-- fermeture <div class="content"-->
-	<?php get_sidebar(); ?>
+	<?php // get_sidebar(); ?>
 </div> <!--fermeture <div class="page"-->
 <?php get_footer(); ?>
 </body>

@@ -46,9 +46,16 @@ function geeks_curiosity_scripts() {
 	// Theme stylesheet.
 	wp_enqueue_style( 'geeks-curiosity', get_stylesheet_uri() );
   //enqueue Dashicons for frontend use
-  wp_enqueue_style( 'geeks-curiosity', get_stylesheet_uri(), array( 'dashicons' ), '1.0' );
+  // wp_enqueue_style( 'geeks-curiosity', get_stylesheet_uri(), array( 'dashicons' ), '1.0' );
 }
 add_action( 'wp_enqueue_scripts', 'geeks_curiosity_scripts' );
+
+add_action( 'wp_enqueue_scripts', 'load_dashicons_front_end' );
+function load_dashicons_front_end() {
+  wp_enqueue_style( 'dashicons' );
+}
+
+
 
 //ajouter une meilleure gestion des div vidéos en les encadrant d'une div
 add_filter( 'embed_oembed_html', 'custom_oembed_filter', 10, 4 ) ;
@@ -69,5 +76,9 @@ function geeks_curiosity_use_post_format(){
   add_theme_support( 'post-formats', array( 'video' ) );
 }
 add_action( 'after_setup_theme', 'geeks_curiosity_use_post_format' );
+
+
+
+
 
 ?>
