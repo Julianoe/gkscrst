@@ -497,7 +497,7 @@ h2 .dashicons {
 }
 .post_img:hover .video-play-icon {
 	color: rgb(240,145,35);
-	background-color: rgba(255,255,255,0.95);
+	background-color: #405561;
 	-webkit-transition: all .2s ease;
 	-moz-transition: all .2s ease;
 	-o-transition: all .2s ease;
