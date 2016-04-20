@@ -412,6 +412,12 @@ input[type="submit"].searchform-bouton{
   color: #2F343B;
 }
 
+/* adjusting the size for icon in title (temporary) */
+.post h2 .dashicons {
+	font-size: 30px;
+	line-height: 1.3;
+}
+
 /*Titre de l'article dans la page ARTICLE*/
 
 .single_title, .taxonomy_title {
