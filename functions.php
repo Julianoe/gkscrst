@@ -62,4 +62,12 @@ function custom_oembed_filter($html, $url, $attr, $post_ID) {
 function geeks_curiosity_login() {
   wp_enqueue_style( 'custom-login', get_template_directory_uri() . '/css/admin.css' );
 }
-add_action( 'login_enqueue_scripts', 'geeks_curiosity_login' );?>
+add_action( 'login_enqueue_scripts', 'geeks_curiosity_login' );
+
+//adding support for video post format
+function geeks_curiosity_use_post_format(){
+  add_theme_support( 'post-formats', array( 'video' ) );
+}
+add_action( 'after_setup_theme', 'geeks_curiosity_use_post_format' );
+
+?>
