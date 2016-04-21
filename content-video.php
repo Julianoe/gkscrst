@@ -11,10 +11,10 @@
       <a href="<?php the_permalink(); ?>" title="<?php the_title();?>">
         <?php the_post_thumbnail(); ?>
 
-        <span class="video-play-icon">
+        <!-- <div class="video-play-icon">
           <span class="dashicons dashicons-controls-play"></span>
-        </span>
-        
+        </div> -->
+
       </a>
     </div>
   <?php } ?>

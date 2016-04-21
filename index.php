@@ -13,21 +13,32 @@
 								'taxonomy' => 'post_format',
 								'field' => 'slug',
 								'terms' => array('post-format-video'),
-								// 'operator' => 'IN' (default)
-						)
-				)
-		) );?>
 
-		<div class="row post-format-video-latest">
-			<?php
-			/*
-			* Using the query to display only the posts with the post format video
-			*/
-			if ( $videoformatquery->have_posts() ) : while ( $videoformatquery->have_posts() ) : $videoformatquery->the_post();
-				get_template_part('content', 'last-videos');
-			// Close the loop
-			endwhile; endif; ?>
+								// 'operator' => 'IN' (default)
+						),
+
+				),
+				//limit the number of posts
+				'posts_per_page' => 2
+		) );?>
+		<div class="container">
+			<div class="row post-format-video-latest">
+				<?php
+				/*
+				* Using the query to display only the posts with the post format video
+				*/
+				if ( $videoformatquery->have_posts() ) : while ( $videoformatquery->have_posts() ) : $videoformatquery->the_post();
+					get_template_part('content', 'last-videos');
+				// Close the loop
+				endwhile; endif; ?>
+
+				<?php $format_link = get_post_format_link('video'); ?>
+				<!-- <div class="one column" ><a class="column-link" href="<?php echo $format_link ?>"><span>...</span></a></div> -->
+
+			</div>
 		</div>
+
+
 		<?php // Reset $post data to default query
 		wp_reset_postdata();
 		/////////////////////////////////////////?>
