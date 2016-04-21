@@ -5,8 +5,7 @@
 
         <div class="video-block">
           <div class="postmetadata">
-            <?php the_time('j F Y') ?> <?php //the_author() ?>
-            <span class="comments-link"><?php $comments = '<span class="dashicons dashicons-format-chat"></span>'; comments_popup_link( '', '1' .$comments, '%'.$comments); ?></span>
+            <span class="postmetada-left" style="float:left;"><span class="dashicons dashicons-category"></span> <?php the_category(', ') ?> </span><span class="postmetada-right"><?php the_time('j F') ?> <?php //the_author() ?><span class="comments-link"><?php $comments = '<span class="dashicons dashicons-format-chat"></span>'; comments_popup_link( '', '1' .$comments, '%'.$comments); ?></span></span>
           </div>
 
         <?php if ( has_post_thumbnail() ) { ?> <!-- dans la boucle-->
