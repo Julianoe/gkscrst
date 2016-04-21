@@ -5,45 +5,48 @@
 
 
 <?php
-		/////////////////////////////////////////
-		// create a query with ONLY the video post format
-		$videoformatquery = new WP_Query( array(
-				'tax_query' => array(
-						array(
-								'taxonomy' => 'post_format',
-								'field' => 'slug',
-								'terms' => array('post-format-video'),
+		if(is_home()) :
+			/////////////////////////////////////////
+			// create a query with ONLY the video post format
+			$videoformatquery = new WP_Query( array(
+					'tax_query' => array(
+							array(
+									'taxonomy' => 'post_format',
+									'field' => 'slug',
+									'terms' => array('post-format-video'),
 
-								// 'operator' => 'IN' (default)
-						),
+									// 'operator' => 'IN' (default)
+							),
 
-				),
-				//limit the number of posts
-				'posts_per_page' => 2
-		) );?>
-		<div class="container">
-			<div class="row post-format-video-latest">
-				<?php
-				/*
-				* Using the query to display only the posts with the post format video
-				*/
-				if ( $videoformatquery->have_posts() ) : while ( $videoformatquery->have_posts() ) : $videoformatquery->the_post();
-					get_template_part('content', 'last-videos');
-				// Close the loop
-				endwhile; endif; ?>
+					),
+					//limit the number of posts
+					'posts_per_page' => 2
+			) );?>
+			<div class="">
+				<!-- <h1 style="text-align:center;margin-bottom:0;">Les dernières vidéos</h1> -->
+				<div class="row post-format-video-latest">
+					<?php
+					/*
+					* Using the query to display only the posts with the post format video
+					*/
+					if ( $videoformatquery->have_posts() ) : while ( $videoformatquery->have_posts() ) : $videoformatquery->the_post();
+						get_template_part('content', 'last-videos');
+					// Close the loop
+					endwhile; endif; ?>
 
-				<?php $format_link = get_post_format_link('video'); ?>
-				<!-- <div class="one column" ><a class="column-link" href="<?php echo $format_link ?>"><span>...</span></a></div> -->
+					<!-- <div class="one column" ><a class="column-link" href="<?php echo $format_link ?>"><span>...</span></a></div> -->
 
+				</div>
+				<div class="row aligncenter">
+					<?php $format_link = get_post_format_link('video'); ?>
+					<a class="button button-primary" href="<?php echo $format_link ?>">Toutes les vidéos</a>
+				</div>
 			</div>
-		</div>
 
-
-		<?php // Reset $post data to default query
-		wp_reset_postdata();
-		/////////////////////////////////////////?>
-		<br/><br/>
-		<hr>
+			<?php // Reset $post data to default query
+			wp_reset_postdata();
+			/////////////////////////////////////////?>
+		<?php endif; // END if is_home?>
 
 
 
