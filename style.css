@@ -523,14 +523,14 @@ h2 .dashicons {
 	background-size: cover;
 	background-position: center center;
 }
-.post-format-video-latest .comments-link a{color: #F7931E;}
-.post-format-video-latest .comments-link a:hover{ text-decoration: none;}
+.post-format-video-latest a{color: #F7931E;}
+.post-format-video-latest a:hover{ text-decoration: none;}
 .post-format-video-latest .postmetadata{
-padding: 0.5em 0.5em 0.5em 0;
+padding: 0.5em;
 margin:0;
 }
 
-.post-format-video-latest{}
+
 
 @media only screen and (max-width:760px){
 	.post-format-video-latest h2{
