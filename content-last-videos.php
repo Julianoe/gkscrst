@@ -6,7 +6,7 @@
         <div class="video-block">
           <div class="postmetadata">
             <?php the_time('j F Y') ?> <?php //the_author() ?>
-            <span class="comments-link"><?php $comments = '<span class="dashicons dashicons-format-chat"></span>'; comments_popup_link( $comments, '1' .$comments, '%'.$comments); ?></span>
+            <span class="comments-link"><?php $comments = '<span class="dashicons dashicons-format-chat"></span>'; comments_popup_link( '', '1' .$comments, '%'.$comments); ?></span>
           </div>
 
         <?php if ( has_post_thumbnail() ) { ?> <!-- dans la boucle-->
