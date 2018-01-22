@@ -10,27 +10,27 @@
 				<ul class="mylogossocial">
 					<li class="logofb logo-menu">
 						<a title="Page Facebook Geek's Curiosity" href="https://www.facebook.com/Geeks.Curiosity" target="_blank">
-								<img src="<?php get_bloginfo('template_url') ?>/images/fb.png" alt="Facebook"/><span>Facebook</span>
+								<img src="<?php echo get_bloginfo('template_url') ?>/images/fb.png" alt="Facebook"/><span>Facebook</span>
 						</a>
 					</li>
 					<li class="logotw logo-menu">
 						<a title="Compte Twitter du blog" href="https://twitter.com/geeks_curiosity" target="_blank">
-								<img src="<?php get_bloginfo('template_url') ?>/images/tw.png" alt="Twitter"/><span>Twitter</span>
+								<img src="<?php echo get_bloginfo('template_url') ?>/images/tw.png" alt="Twitter"/><span>Twitter</span>
 						</a>
 					</li>
 					<li class="logoyt logo-menu">
 						<a title="Chaîne Youtube du blog" href="http://www.youtube.com/user/Frondlock" target="_blank">
-								<img src="<?php get_bloginfo('template_url') ?>/images/yt.png" alt="Youtube"/><span>Youtube</span>
+								<img src="<?php echo get_bloginfo('template_url') ?>/images/yt.png" alt="Youtube"/><span>Youtube</span>
 						</a>
 					</li>
 					<li class="logomail logo-menu">
-						<a title="Me contacter" href="<?php get_bloginfo('siteurl'); ?>?page_id=85">
-								<img src="<?php get_bloginfo('template_url') ?>/images/mail.png" alt="Contact"/><span>Contact</span>
+						<a title="Me contacter" href="<?php echo get_bloginfo('siteurl'); ?>?page_id=85">
+								<img src="<?php echo get_bloginfo('template_url') ?>/images/mail.png" alt="Contact"/><span>Contact</span>
 						</a>
 					</li>
 					<li class="logogc logo-menu">
-						<a title="Quelques infos" href="<?php get_bloginfo('siteurl'); ?>?page_id=86">
-								<img src="<?php get_bloginfo('template_url') ?>/images/gc.png" alt="À propos"/><span>À propos</span>
+						<a title="Quelques infos" href="<?php echo get_bloginfo('siteurl'); ?>?page_id=86">
+								<img src="<?php echo get_bloginfo('template_url') ?>/images/gc.png" alt="À propos"/><span>À propos</span>
 						</a>
 					</li>
 				</ul>
