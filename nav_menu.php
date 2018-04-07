@@ -24,12 +24,12 @@
 						</a>
 					</li>
 					<li class="logomail logo-menu">
-						<a title="Me contacter" href="<?php echo get_bloginfo('siteurl'); ?>?page_id=85">
+						<a title="Me contacter" href="<?php echo get_bloginfo('url'); ?>?page_id=85">
 								<img src="<?php echo get_bloginfo('template_url') ?>/images/mail.png" alt="Contact"/><span>Contact</span>
 						</a>
 					</li>
 					<li class="logogc logo-menu">
-						<a title="Quelques infos" href="<?php echo get_bloginfo('siteurl'); ?>?page_id=86">
+						<a title="Quelques infos" href="<?php echo get_bloginfo('url'); ?>?page_id=86">
 								<img src="<?php echo get_bloginfo('template_url') ?>/images/gc.png" alt="À propos"/><span>À propos</span>
 						</a>
 					</li>
