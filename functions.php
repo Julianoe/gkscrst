@@ -103,7 +103,7 @@ function geeks_curiosity_opengraph() {
     } else {
 
       if(has_post_thumbnail($post->ID)) {
-        $img_src = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'medium');
+        $img_src = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'large');
       }
       if($excerpt = $post->post_excerpt) {
         $excerpt = strip_tags($post->post_excerpt);
