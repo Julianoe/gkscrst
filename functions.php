@@ -102,7 +102,6 @@ function geeks_curiosity_opengraph() {
   <meta property="og:image" content="<?php echo $img_src; ?>"/>
 
 <?php
-  }
 }
 add_action('wp_head', 'geeks_curiosity_opengraph', 5);
 
