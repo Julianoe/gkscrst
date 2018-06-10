@@ -1,3 +1,106 @@
-<?php /* Do not delete these lines*/if ('comments.php' == basename($_SERVER['SCRIPT_FILENAME'])) die ('Ne pas t&eacute;l&eacute;charger cette page directement, merci !');
-if (!empty($post->post_password)) { // if there's a password	if ($_COOKIE['wp-postpass_' . COOKIEHASH] != $post->post_password) {  // and it doesn't match the cookie?><h2><?php _e('Prot&eacute;g&eacute; par mot de passe'); ?></h2><p><?php _e('Entrer le mot de passe pour voir les commentaires'); ?></p><?php return;	}}/*d�finition des variables:*/$oddcomment = "comment-dark";	/*cette variable sert � alterner les couleurs de fonds des bulles de commentaire*/$bulle = "comment-footer-dark";		/*cette variable sert � alterner les couleurs des queues de bulle*/$metadatacolor = "commentmetadata-dark";	/*Va permettre d'alterner la couleur des metadata*/?><!-- You can start editing here. --><!--<div class="commentstemplate-separator"></div>--><!--<div class="light_separator"></div>--><br/><?php if ($comments) : ?>	<h3 id="comments"><?php comments_number('Pas de commentaire', 'Un commentaire', '% commentaires' );?> pour &#8220;<?php the_title(); ?>&#8221;</h3><!--cr�� la liste de commentaires existants--><ol class="commentlist">	<?php foreach ($comments as $comment) : ?>		<li class="<?php echo $oddcomment; ?>" id="comment-<?php comment_ID() ?>">			<?php comment_text() ?>			<div class="commentmetadata">				<div class="<?php echo $metadatacolor; ?>"> <!--Va permettre d'alterner la couleur des metadata-->					<div class="commentmetadata-author"><?php _e('Post&eacute; par'); ?><strong>&nbsp;&nbsp;<?php comment_author_link() ?></strong></div>					<div class="commentmetadata-time">						<?php _e('le'); ?> <?php comment_date('j F, Y') ?> <?php _e('&agrave;');?> <?php comment_time() ?> <?php edit_comment_link('Edit Comment','',''); ?>					</div>		 		</div>		 		<?php if ($comment->comment_approved == '0') : ?>
-					<em><?php _e('Votre commentaire est en cours de mod&eacute;ration'); ?></em>		 		<?php endif; ?>			</div>		</li>		<div class="<?php echo $bulle; ?>" ></div> <!--footer du commentaire qui affiche la queue de la bulle-->		<?php			if ('comment-dark' == $oddcomment) $oddcomment = 'comment-light';			else $oddcomment = 'comment-dark';			/* Change tous les autres commentaires en une classe diff�rente */		?>		<?php			if ('comment-footer-dark' == $bulle) $bulle = 'comment-footer-light';			else $bulle = 'comment-footer-dark';			/*<!--module pour placer l'image de queue de bulle-->*/		?>		<?php			if ('commentmetadata-dark' == $metadatacolor) $metadatacolor = 'commentmetadata-light';			else $metadatacolor = 'commentmetadata-dark';			/*alterne la couleur des metadata*/		?>	<?php endforeach; /* end for each comment */ ?></ol><?php else : // this is displayed if there are no comments so far ?>		<?php if ('open' == $post->comment_status) : ?>			<!-- If comments are open, but there are no comments. -->			<?php else : // comments are closed ?>			<!-- If comments are closed. -->			<p class="nocomments">Les commentaires sont ferm&eacute;s !</p>		<?php endif; ?>	<?php endif; ?><!--</div>--><div class="light_separator"></div><div class="comment-form">	<?php if ('open' == $post->comment_status) : ?>			<h3 id="respond"><?php _e('Laissez un commentaire')?></h3>	<?php if ( get_option('comment_registration') && !$user_ID ) : ?>	<p>You must be <a href="<?php echo get_option('siteurl'); ?>/wp-login.php?redirect_to=<?php the_permalink(); ?>">connect&eacute;</a> pour laisser un commentaire.</p>	<?php else : ?><!-- formulaire pour poster un nouveau commentaire-->	<form action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post" id="commentform">		<?php if ( $user_ID ) : ?>			<p>Connecté en tant que <a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a>. <a href="<?php echo get_option('siteurl'); ?>/wp-login.php?action=logout" title="D&eacute;connect&eacute; de ce compte">D&eacute;connection &raquo;</a></p>			<?php else : ?>				<p><input type="text" name="author" id="author" value="<?php echo $comment_author; ?>" size="40" tabindex="1" />				<label for="author"><small>Nom <?php if ($req) echo "(requis)"; ?></small></label></p>				<p><input type="text" name="email" id="email" value="<?php echo $comment_author_email; ?>" size="40" tabindex="2" />				<label for="email"><small>email (ne sera pas publi&eacute;) <?php if ($req) echo "(requis)"; ?></small></label></p>				<p><input type="text" name="url" id="url" value="<?php echo $comment_author_url; ?>" size="40" tabindex="3" />				<label for="url"><small>Site Web</small></label></p>		<?php endif; ?>		<!--<p><small><strong>XHTML:</strong> <?php _e('Vous pouvez utiliser ces tags&#58;'); ?> <?php echo allowed_tags(); ?></small></p>-->		<p><textarea name="comment" id="comment" cols="60" rows="10" tabindex="4"></textarea></p>		<p><input name="submit" type="submit" id="submit" tabindex="5" value="Envoyer" />		<input type="hidden" name="comment_post_ID" value="<?php echo $id; ?>" />		</p>		<?php do_action('comment_form', $post->ID); ?>	</form></div><?php endif; // If registration required and not logged in ?><?php endif; // if you delete this the sky will fall on your head ?>
+<?php
+/**
+ * The template for displaying comments
+ *
+ * This is the template that displays the area of the page that contains both the current comments
+ * and the comment form.
+ *
+ * @link https://codex.wordpress.org/Template_Hierarchy
+ *
+ * @package WordPress
+ * @subpackage Twenty_Seventeen
+ * @since 1.0
+ * @version 1.0
+ */
+
+/*
+ * If the current post is protected by a password and
+ * the visitor has not yet entered the password we will
+ * return early without loading the comments.
+ */
+if ( post_password_required() ) {
+	return;
+}
+?>
+<?php
+$bulle = "comment-footer-dark";		/*cette variable sert � alterner les couleurs des queues de bulle*/
+$metadatacolor = "commentmetadata-dark";	/*Va permettre d'alterner la couleur des metadata*/
+$oddcomment = "comment-dark";	/*cette variable sert � alterner les couleurs de fonds des bulles de commentaire*/
+
+?>
+
+<?php
+if ('comment-dark' == $oddcomment) $oddcomment = 'comment-light';
+else $oddcomment = 'comment-dark';
+/* Change tous les autres commentaires en une classe diff�rente */
+?>
+<?php
+if ('comment-footer-dark' == $bulle) $bulle = 'comment-footer-light';
+else $bulle = 'comment-footer-dark';
+/*<!--module pour placer l'image de queue de bulle-->*/
+?>
+<?php
+if ('commentmetadata-dark' == $metadatacolor) $metadatacolor = 'commentmetadata-light';
+else $metadatacolor = 'commentmetadata-dark';
+/*alterne la couleur des metadata*/
+?>
+
+
+<div id="comments" class="comments-area">
+
+	<?php
+	// You can start editing here -- including this comment!
+	if ( have_comments() ) : ?>
+		<h2 class="comments-title">
+			<?php
+				$comments_number = get_comments_number();
+				if ( '1' === $comments_number ) {
+					/* translators: %s: post title */
+					printf( _x( 'One Reply to &ldquo;%s&rdquo;', 'comments title', 'twentyseventeen' ), get_the_title() );
+				} else {
+					printf(
+						/* translators: 1: number of comments, 2: post title */
+						_nx(
+							'%1$s Reply to &ldquo;%2$s&rdquo;',
+							'%1$s Replies to &ldquo;%2$s&rdquo;',
+							$comments_number,
+							'comments title',
+							'twentyseventeen'
+						),
+						number_format_i18n( $comments_number ),
+						get_the_title()
+					);
+				}
+			?>
+		</h2>
+
+		<ol class="comment-list">
+			<?php
+				wp_list_comments( array(
+					'avatar_size' => 32,
+					'style'       => 'ol',
+
+					'short_ping'  => true,
+					'reply_text'  => __( 'Reply', 'twentyseventeen' ),
+				) );
+			?>
+		</ol>
+
+		<?php the_comments_pagination( array(
+			'prev_text' => '<span class="screen-reader-text">' . __( 'Previous', 'twentyseventeen' ) . '</span>',
+			'next_text' => '<span class="screen-reader-text">' . __( 'Next', 'twentyseventeen' ) . '</span>',
+		) );
+
+	endif; // Check for have_comments().
+
+	// If comments are closed and there are comments, let's leave a little note, shall we?
+	if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) : ?>
+
+		<p class="no-comments"><?php _e( 'Comments are closed.', 'twentyseventeen' ); ?></p>
+	<?php
+	endif;
+
+	comment_form();
+	?>
+
+</div><!-- #comments -->

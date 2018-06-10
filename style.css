@@ -870,7 +870,9 @@ blockquote {
 
 
 /*||________/\ COMMENTAIRES /\__________||*/
-
+ul ul, ul ol, ol ol, ol ul{
+	font-size: 100%;
+}
 .comments-template {
   margin: 0;
 }
@@ -960,6 +962,48 @@ blockquote {
 .comments-template textarea {
   font-family: Trebuchet MS, Arial, Hevletica, Sans-serif;
   font-size: 0.9em;
+}
+
+
+/* OVERRIDING FOR NEW TEMPLATE */
+.comment-list .children{
+	margin-left: 2em;
+}
+
+/* impair */
+.comment-list .comment{
+/* .comment-list .comment:nth-child(2n+1){ */
+	background-color: #405561;
+}
+/* .comment-list .comment:nth-child(2n+1) .commentmetadata a,  */
+.comment-list .comment .commentmetadata a,
+/* .comment-list .comment:nth-child(2n+1) .reply a,  */
+.comment-list .comment .reply a,
+/* .comment-list .comment:nth-child(2n+1) .comment-author, */
+.comment-list .comment .comment-author,
+.comment-list .comment .children:first-of-type .commentmetadata a,
+.comment-list .comment .children:first-of-type .reply a,
+.comment-list .comment .children:first-of-type .comment-author{
+	color: #98a8b1;
+
+}
+/* pair */
+/* .comment-list .comment:nth-child(2n){
+	background-color: #667781;
+}
+.comment-list .comment:nth-child(2n) .commentmetadata a, .comment-list .comment:nth-child(2n) .reply a,  .comment-list .comment:nth-child(2n) .comment-author{
+	color: #2b353b;
+
+} */
+.comments-template ol li{
+	width: 80%;
+	padding: 2em;
+}
+.comments-template ol p{
+	font-size: 1.2em;
+}
+.comment-author{
+	color : #f5f5f5;
 }
 /*.commentstemplate-separator {
   width: 650px;
