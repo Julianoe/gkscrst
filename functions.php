@@ -73,9 +73,16 @@ add_action( 'login_enqueue_scripts', 'geeks_curiosity_login' );
 
 //adding support for video post format
 function geeks_curiosity_use_post_format(){
-  add_theme_support( 'post-formats', array( 'video' ) );
+  add_theme_support( 'post-formats', array( 'video', 'status' ) );
 }
 add_action( 'after_setup_theme', 'geeks_curiosity_use_post_format' );
+
+// add post-formats to post_type 'page'
+add_action('init', 'geeks_curiosity_use_post_format_init', 11);
+function geeks_curiosity_use_post_format_init(){
+    add_post_type_support( 'post', 'post-formats' );
+    register_taxonomy_for_object_type( 'post_format', 'post' );
+}
 
 function geeks_curiosity_opengraph() {
   global $post;

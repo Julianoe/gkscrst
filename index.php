@@ -49,15 +49,37 @@
 		<?php endif; // END if is_home?>
 
 
-
+<?php
+		$videocounter = 0;
+	?>
 	<?php if(have_posts()) :?>
+
 	<?php while(have_posts()) : the_post();
 		/*
 		 * Include the format specific content template page
 		 * Only video format is activated for this theme
 		 * It is detailed in content-video.php
 		 */
-			get_template_part('content', get_post_format());
+		 	if( has_post_format('video') ){
+
+				if( $videocounter < 2){
+					$videocounter = $videocounter + 1;
+				} else {
+					
+					get_template_part('content', get_post_format());
+
+				}
+
+			} elseif( get_post_format( 'status' ) ){
+
+				get_template_part('content', get_post_format());
+
+
+			} else{
+
+				get_template_part('content', get_post_format());
+
+			}
 
 	 endwhile; ?>
 
