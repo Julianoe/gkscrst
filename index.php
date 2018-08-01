@@ -62,10 +62,10 @@
 		 */
 		 	if( has_post_format('video') ){
 
-				if( $videocounter < 2){
+				if( is_home() && $videocounter < 2){
 					$videocounter = $videocounter + 1;
 				} else {
-					
+
 					get_template_part('content', get_post_format());
 
 				}
