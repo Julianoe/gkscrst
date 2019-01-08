@@ -33,6 +33,11 @@
 								<img src="<?php echo get_bloginfo('template_url') ?>/images/gc.png" alt="À propos"/><span>À propos</span>
 						</a>
 					</li>
+					<li class="logogc logo-menu">
+						<a title="Flux RSS" href="<?php echo get_bloginfo('url'); ?>/feed">
+								<img src="<?php echo get_bloginfo('template_url') ?>/images/rss.png" alt="RSS"/><span>RSS</span>
+						</a>
+					</li>
 				</ul>
 			</nav>
 
