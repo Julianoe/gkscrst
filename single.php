@@ -19,10 +19,6 @@
 						<?php // ajout de l'affichage des tags
 						?>
 						<div class="gc-channel-thematiques-tags"><span class="dashicons dashicons-tag"></span> <?php echo the_terms( $post->ID, 'post_tag', 'Etiquettes : ', ', ', ' ' ); ?></div>
-
-						<div class="light_separator"></div>
-						<br/>
-						<div class="fb-like" data-href="https://www.facebook.com/Geeks.Curiosity" data-send="true" data-show-faces="false"></div> <a class="twitter-follow-button" href="https://twitter.com/geeks_curiosity" data-show-count="true" data-lang="fr" data-size="large" data-show-screen-name="false">Suivre @geeks_curiosity</a>
 					</div>
 
 				</div>
