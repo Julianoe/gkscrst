@@ -121,6 +121,12 @@ function geeks_curiosity_twittertags(){
   } else {
     $img_src = '';
   }
+  if($excerpt = $post->post_excerpt) {
+    $excerpt = strip_tags($post->post_excerpt);
+    $excerpt = str_replace("", "'", $excerpt);
+  } else {
+    $excerpt = get_bloginfo('description');
+  }
   ?>
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@geeks_curiosity" />
