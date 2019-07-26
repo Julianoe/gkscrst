@@ -4,7 +4,7 @@ add_theme_support( 'post-thumbnails' ); //ajout de la fonction qui permet l'util
 set_post_thumbnail_size( 680, 200, true ); // Miniatures de l'accueil
 add_image_size( 'miniature-archives', 680, 200 ); // Miniatures des archives
 //add_theme_support( 'post-thumbnails', array( 'post' ) ); // Ajouter les images � la une sur les articles uniquement
-
+add_image_size( 'twitter-card', 800, 418 );
 //permet d'ajouter à worpress une fonction qui rend valide la cr�altion de lien aupr�s du W3C (suppression de Rel attribut)
 function removeCategoryListRel($output){
   $output = str_replace(' rel="category"', '', $output);
@@ -112,6 +112,26 @@ function geeks_curiosity_opengraph() {
 }
 add_action('wp_head', 'geeks_curiosity_opengraph', 5);
 
+function geeks_curiosity_twittertags(){
+  global $post;
 
+  if(has_post_thumbnail($post->ID)) {
+    $img_src = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'twitter-card');
+    $img_src = $img_src[0];
+  } else {
+    $img_src = '';
+  }
+  ?>
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@geeks_curiosity" />
+  <meta name="twitter:title" content="<?php echo the_title(); ?>" />
+  <meta name="twitter:description" content="<?php echo $excerpt; ?>" />
+  <meta name="twitter:url" content="<?php echo the_permalink(); ?>" />
+  <meta name="twitter:creator" content="@geeks_curiosity" />
+  <!-- ration 800x418 / 1.91:1 -->
+  <meta name="twitter:image" content="<?php echo $img_src; ?>" />
+<?php
+}
+add_action('wp_head', 'geeks_curiosity_twittertags', 5);
 
 ?>
