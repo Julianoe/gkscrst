@@ -18,7 +18,7 @@
 						<br/>
 						<?php // ajout de l'affichage des tags
 						?>
-						<div class="gc-channel-thematiques-tags"><span class="dashicons dashicons-tag"></span> <?php echo the_terms( $post->ID, 'post_tag', 'Etiquettes : ', ', ', ' ' ); ?></div>
+						 <?php echo the_terms( $post->ID, 'post_tag', '<div class="gc-channel-thematiques-tags"><span class="dashicons dashicons-tag"></span>Etiquettes : ', ', ', '</div>' ); ?>
 					</div>
 
 				</div>
