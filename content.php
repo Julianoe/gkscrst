@@ -1,4 +1,4 @@
-<div <?php post_class(); ?> id="post-<?php the_ID();?>">
+<article <?php post_class(); ?> id="post-<?php the_ID();?>">
 	<h2><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
 	<div class="postmetadata">
 		<!-- donne des informations sur l'article : sa date , son auteur, le nombre de commentaires. Peut �tre plac� � la fin ou au d�but -->
@@ -26,4 +26,4 @@
 	<br/><br/> <!--espace entre deux articles-->
 	<!--<div class="post_separator"></div>--><!--s�parateur-->
 	<div class="light_separator"></div>
-</div>
+</article>
