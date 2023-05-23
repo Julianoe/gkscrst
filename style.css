@@ -443,6 +443,8 @@ h2 .dashicons {
   height: 2px;
   width: 70%;
   margin:0 auto;
+  margin-top: 2.5rem;
+	margin-bottom: 2rem;
   background-repeat: no-repeat;
 }
 
@@ -680,12 +682,17 @@ margin-left: 2%;
 
 
 
-
+.post_link {
+	text-align: right;
+}
+a.post_link {
+	color: #F7931E;
+}
 .post_link, .post_link a {
   /*lire la suite*/
   color: #F7931E;
   /*#475D69;*/
-  float: right;
+  float: none;
   line-height: 10px;
   font-size: 16px;
   /*font-weight: bold;*/
@@ -787,7 +794,7 @@ blockquote {
   color: #475D69;
   /*margin-bottom:14px;*/
   margin-top:1.2em;
-  margin-bottom:2.4em;
+  margin-bottom: 1.2em;  
 }
 .postmetadata p {
   font-size: 1em;
@@ -1413,4 +1420,9 @@ a:hover {
 		margin: 15px 0 15px 0;
 	}
 
+}
+
+.post.type-post > h2 {
+	line-height: 1.2;
+	margin-top: 0;
 }

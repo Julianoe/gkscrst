@@ -22,8 +22,7 @@
 		<?php the_excerpt(); ?>
 	</div>
 	<!--lien pour afficher l'article complet-->
-	<div class="post_link"><strong>&raquo;</strong>&nbsp;<a href="<?php the_permalink(); ?>" title="Lire la suite"> <?php _e('Lire la suite')?></a></div>
-	<br/><br/> <!--espace entre deux articles-->
+	<div class="post_link"><a href="<?php the_permalink(); ?>" title="Lire la suite"><strong>&raquo;</strong>&nbsp; <?php _e('Lire la suite')?></a></div>
 	<!--<div class="post_separator"></div>--><!--s�parateur-->
 	<div class="light_separator"></div>
 </article>

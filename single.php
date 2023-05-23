@@ -15,7 +15,6 @@
 					</div>
 					<div class="post_content">
 						<?php the_content(); ?>
-						<br/>
 						<?php // ajout de l'affichage des tags
 						?>
 						 <?php echo the_terms( $post->ID, 'post_tag', '<div class="gc-channel-thematiques-tags"><span class="dashicons dashicons-tag"></span>Etiquettes : ', ', ', '</div>' ); ?>
@@ -26,9 +25,7 @@
 		<!-- appel aux articles pr�c�dents et suivants -->
 		<!-- Il est possible de modifier la pr�sentation en mettant ce que l'on veut dans les parenth�ses-->
 		<!--<div class="post_prev"><?php previous_post_link('%link') ?></div> <div class="post_next"><?php next_post_link('%link') ?></div>-->
-		<br/>
 <div class="light_separator"></div>
-		<br/>
 		<div class="comments-template">
 			<?php comments_template(); ?>
 		</div>
