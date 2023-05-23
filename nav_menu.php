@@ -9,17 +9,17 @@
 			<nav class="logossocial">
 				<ul class="mylogossocial">
 					<li class="logofb logo-menu">
-						<a title="Page Facebook Geek's Curiosity" href="https://www.facebook.com/Geeks.Curiosity" target="_blank">
-								<img src="<?php echo get_bloginfo('template_url') ?>/images/fb.png" alt="Facebook"/><span>Facebook</span>
+						<a title="Mastodon Geek's Curiosity" rel="me" href="https://mastodon.xyz/@Julianoe" target="_blank">
+								<img src="<?php echo get_bloginfo('template_url') ?>/images/masto.png" alt="Mastodon"/><span>Mastodon</span>
 						</a>
 					</li>
 					<li class="logotw logo-menu">
-						<a title="Compte Twitter du blog" href="https://twitter.com/geeks_curiosity" target="_blank">
+						<a title="Compte Twitter du blog" rel="me" href="https://twitter.com/geeks_curiosity" target="_blank">
 								<img src="<?php echo get_bloginfo('template_url') ?>/images/tw.png" alt="Twitter"/><span>Twitter</span>
 						</a>
 					</li>
 					<li class="logoyt logo-menu">
-						<a title="Chaîne Youtube du blog" href="http://www.youtube.com/user/Frondlock" target="_blank">
+						<a title="Chaîne Youtube du blog" rel="me" href="http://www.youtube.com/user/Frondlock" target="_blank">
 								<img src="<?php echo get_bloginfo('template_url') ?>/images/yt.png" alt="Youtube"/><span>Youtube</span>
 						</a>
 					</li>
