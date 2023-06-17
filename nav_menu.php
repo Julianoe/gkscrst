@@ -2,7 +2,7 @@
 
 			<!-- inspired by Nariman Adam http://codepen.io/nariman_adam/pen/MwRJop -->
 			<div id="toggle">
-					<input type="checkbox" id="input-toggle" id="toggle">
+					<input type="checkbox" id="input-toggle">
 					<span></span>
 			</div>
 
