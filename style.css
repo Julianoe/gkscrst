@@ -476,6 +476,11 @@ h2 .dashicons {
   height:auto;
   vertical-align: middle;
 }
+.single-post:not(.single-format-video) .post_img {
+  width: 100%;
+  margin: 0 !important;
+  border: 0;
+}
 .post_img a {
   height:100%;
 }

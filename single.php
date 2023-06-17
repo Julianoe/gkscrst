@@ -1,9 +1,12 @@
 <?php get_header(); ?>
 <div class="page">
-	<div class="content">
+	<div class="content" <?php if( has_post_thumbnail() && ! has_post_format('video') ) echo 'style="padding-top:13px"'; ?>>
 		<?php if(have_posts()) : ?>
 			<?php while(have_posts()) : the_post(); ?>
-				<div class="post" id="post-<?php the_ID();?>">
+				<article class="post" id="post-<?php the_ID();?>" <?php post_class(); ?>>
+					<?php if( has_post_thumbnail() && ! has_post_format('video') ): ?>
+						<?php the_post_thumbnail('post-thumbnail', ['class'=>'post_img']); ?>
+					<?php endif; ?>
 					<h1 class="single_title"><?php the_title(); ?></h1>
 					<div class="light_separator"></div>
 					<div class="postmetadata">
@@ -20,7 +23,7 @@
 						 <?php echo the_terms( $post->ID, 'post_tag', '<div class="gc-channel-thematiques-tags"><span class="dashicons dashicons-tag"></span>Etiquettes : ', ', ', '</div>' ); ?>
 					</div>
 
-				</div>
+				</article>
 			<?php endwhile; ?>
 		<!-- appel aux articles pr�c�dents et suivants -->
 		<!-- Il est possible de modifier la pr�sentation en mettant ce que l'on veut dans les parenth�ses-->
