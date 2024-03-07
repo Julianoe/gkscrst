@@ -19,7 +19,7 @@
     <link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="<?php echo get_bloginfo('atom_url'); ?>" />
     <link rel="pingback" href="<?php echo get_bloginfo('pingback_url'); ?>" />
     <link rel="shortcut icon" href="<?php echo get_bloginfo('template_url');?>/images/favicon.ico" type="image/x-icon"/>
-    <link rel="icon" href="<?php echo get_bloginfo('template_url');?>/favicon.ico" type="image/x-icon"/>
+    <link rel="icon" href="<?php echo get_bloginfo('template_url');?>/images/favicon.ico" type="image/x-icon"/>
     <?php wp_get_archives('type=monthly&format=link'); ?>
     <?php wp_head(); ?>
   </head>
