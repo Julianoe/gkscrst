@@ -140,4 +140,122 @@ function geeks_curiosity_twittertags(){
 }
 add_action('wp_head', 'geeks_curiosity_twittertags', 5);
 
-?>
+/**
+ * Ajouter une nouvelle entrée dans la REST API 
+ * https://developer.wordpress.org/reference/functions/register_rest_field/
+ * https://imranhsayed.medium.com/add-custom-field-to-wordpress-rest-api-35c63c6dfff4
+ */
+add_action( 'rest_api_init', 'gk_API_add_tags_infos' );
+function gk_API_add_tags_infos() {
+  register_rest_field(
+  'post', 
+  'tags_infos', //New Field Name in JSON RESPONSEs
+  array(
+      'get_callback'    => 'gk_API_get_tags_infos', // custom function name 
+      'update_callback' => null,
+      'schema'          => null,
+      )
+  );
+}
+function gk_API_get_tags_infos( $object, $field_name, $request ) {
+  // grab all tags for this post
+  $tags_objects = get_the_tags($object['id']);
+  $tags_infos = [];
+  // return an array of this posts' tags' names only
+  foreach ($tags_objects as $tag) {
+    $tags_infos[] = [
+      "tag_name" => $tag->name,
+      "tag_slug" => $tag->slug,
+
+    ];
+  }
+  return $tags_infos;
+};
+
+add_action( 'rest_api_init', 'gk_API_add_tags_slugs' );
+function gk_API_add_tags_slugs() {
+  register_rest_field(
+  'post', 
+  'tags_slugs', //New Field Name in JSON RESPONSEs
+  array(
+      'get_callback'    => 'gk_API_get_tags_slugs', // custom function name 
+      'update_callback' => null,
+      'schema'          => null,
+      )
+  );
+}
+function gk_API_get_tags_slugs( $object, $field_name, $request ) {
+  // grab all tags for this post
+  $tags_objects = get_the_tags($object['id']);
+  $tags_slugs = [];
+  // return an array of this posts' tags' names only
+  foreach ($tags_objects as $tag) {
+    $tags_slugs[] = $tag->slug;
+  }
+  return $tags_slugs;
+};
+
+add_action( 'rest_api_init', 'gk_API_add_tags_names' );
+function gk_API_add_tags_names() {
+  register_rest_field(
+  'post', 
+  'tags_names', //New Field Name in JSON RESPONSEs
+  array(
+      'get_callback'    => 'gk_API_get_tags_names', // custom function name 
+      'update_callback' => null,
+      'schema'          => null,
+      )
+  );
+}
+function gk_API_get_tags_names( $object, $field_name, $request ) {
+  // grab all tags for this post
+  $tags_objects = get_the_tags($object['id']);
+  $tags_names = [];
+  // return an array of this posts' tags' names only
+  foreach ($tags_objects as $tag) {
+    $tags_names[] = $tag->name;
+  }
+  return $tags_names;
+};
+
+
+
+
+add_action( 'rest_api_init', 'gk_API_add_thumbnail_slug' );
+function gk_API_add_thumbnail_slug() {
+  register_rest_field(
+  'post', 
+  'thumbnail_slug', //New Field Name in JSON RESPONSEs
+  array(
+      'get_callback'    => 'gk_API_get_thumbnail_slug', // custom function name 
+      'update_callback' => null,
+      'schema'          => null,
+      )
+  );
+}
+function gk_API_get_thumbnail_slug( $object, $field_name, $request ) {
+  // grab all tags for this post
+  $slug = get_the_post_thumbnail_url($object['id']);
+  return $slug;
+};
+
+
+/**
+ * https://wordpress.stackexchange.com/questions/215985/rest-api-how-can-i-restrict-a-custom-post-type-to-only-be-accessible-by-authent
+ * https://gist.github.com/danielbachhuber/8f92af4c6a8db784771c
+ * https://developer.wordpress.org/rest-api/frequently-asked-questions/#require-authentication-for-all-requests
+ */
+add_filter( 'rest_authentication_errors', function( $result ) {
+  if ( ! empty( $result ) ) {
+      return $result;
+  }
+  // if ( ! is_user_logged_in() ) {
+
+  // Avec JWT plugin
+  // https://github.com/Tmeister/wp-api-jwt-auth/issues/53
+  if (!is_user_logged_in() && $_SERVER['REQUEST_URI'] !== "/wp-json/jwt-auth/v1/token" && $_SERVER['REQUEST_URI'] !== "/wp-json/jwt-auth/v1/token/validate") {
+    
+      return new WP_Error( 'restx_logged_out', 'Désolé mais l\'accès à mon API est restreinte aux utilisateurs identifiés.', array( 'status' => 401 ) );
+  }
+  return $result;
+});
