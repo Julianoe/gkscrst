@@ -13,7 +13,7 @@
 
         <?php if ( has_post_thumbnail() ) { ?> <!-- dans la boucle-->
           <?php $thumb_id = get_post_thumbnail_id();
-                $thumb_url = wp_get_attachment_image_src($thumb_id,'small', true); ?>
+                $thumb_url = wp_get_attachment_image_src($thumb_id,'post-thumbnail', true); ?>
           <div class="post_img">
             <a href="<?php the_permalink(); ?>" class="cover" title="<?php the_title();?>" style="background-image:url('<?php echo $thumb_url[0]; ?>');">
               <div class="video-play-icon">
