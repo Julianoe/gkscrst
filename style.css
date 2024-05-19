@@ -60,8 +60,7 @@ MENU BOUTON
 }*/
 @font-face {
 	font-family: 'GearedSlab-Bold';
-	src: url('fonts/GearedSlab-Bold.eot');
-	src: local('☺'), url('fonts/GearedSlab-Bold.woff') format('woff'), url('fonts/GearedSlab-Bold.ttf') format('truetype'), url('fonts/GearedSlab-Bold.svg') format('svg');
+	src: local('☺'), url('fonts/GearedSlab-Bold.woff2') format('woff2'), url('fonts/GearedSlab-Bold.ttf') format('truetype'), url('fonts/GearedSlab-Bold.svg') format('svg'), url('fonts/GearedSlab-Bold.woff') format('woff'),;
 	font-weight: normal;
 	font-style: normal;
 }
