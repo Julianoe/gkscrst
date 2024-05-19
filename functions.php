@@ -45,8 +45,6 @@ function geeks_curiosity_scripts() {
 	wp_enqueue_style( 'skeleton', get_template_directory_uri() . '/css/skeleton.css', array(), '2.0.4' );
 	// Theme stylesheet.
 	wp_enqueue_style( 'geeks-curiosity', get_stylesheet_uri(), '', wp_get_theme()->get( 'Version' ) );
-  //enqueue Dashicons for frontend use
-  // wp_enqueue_style( 'geeks-curiosity', get_stylesheet_uri(), array( 'dashicons' ), '1.0' );
 }
 add_action( 'wp_enqueue_scripts', 'geeks_curiosity_scripts' );
 
