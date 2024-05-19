@@ -1,3 +1,4 @@
 - v2.3 modifie le menu pour ajouter Mastodon et fait quelques correctifs légers de CSS et ajoute l'image à la une dans les posts
 - v2.4 sécurise la REST API
 - v2.5 éliminer les emojis et les dashicons
+- v2.6 optimisation

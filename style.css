@@ -2,7 +2,7 @@
 Theme Name: GeeksCuriosity
 Theme URI: http://www.geeks-curiosity.net/
 Description: Version responsive avec menu et contenus adaptés.
-Version: 2.5
+Version: 2.6
 Author: Julianoe (@Julianoe@mastodon.xyz)
 Author URI: https://julianoe.eu.org/
 Tags : yellow, blue, geek, blog, magazine, two-columns, right-sidebar, post-formats, featured-images, responsive-layout
@@ -1174,7 +1174,7 @@ a:hover {
 /*||____________/\ Elementscontenus /\_____________||*/
 .fiche {
   border-left: 5px solid rgb(64, 85, 97);
-  -moz-border-radius: 0;-
+  -moz-border-radius: 0;
   -webkit-border-radius: 0;
   border-radius: 0;
   background-color: #E8E9F5;
