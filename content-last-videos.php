@@ -5,7 +5,10 @@
 
         <div class="video-block">
           <div class="postmetadata">
-            <span class="postmetada-left" style="float:left;"><span class="dashicons dashicons-category"></span> <?php the_category(', ') ?> </span><span class="postmetada-right"><?php the_time('j F') ?> <?php //the_author() ?><span class="comments-link"><?php $comments = '<span class="dashicons dashicons-format-chat"></span>'; comments_popup_link( '', '1' .$comments, '%'.$comments); ?></span></span>
+            <span class="postmetada-left" style="float:left;">🖿 <?php the_category(', ') ?> </span><span class="postmetada-right"><?php the_time('j F') ?> <?php //the_author() ?><span class="comments-link">
+              <?php $comment = '<span aria-label=" commentaire" style="color: transparent; text-shadow: 0 0 0 white;">🗨️</span>'; ?>
+              <?php $comments = '<span aria-label=" commentaires">🗨️</span>'; ?>
+              <?php comments_popup_link( '', '1' . $comment, '% ' . $comments); ?></span></span>
           </div>
 
         <?php if ( has_post_thumbnail() ) { ?> <!-- dans la boucle-->
@@ -14,7 +17,7 @@
           <div class="post_img">
             <a href="<?php the_permalink(); ?>" class="cover" title="<?php the_title();?>" style="background-image:url('<?php echo $thumb_url[0]; ?>');">
               <div class="video-play-icon">
-                <span class="dashicons dashicons-controls-play"></span>
+                <span aria-label="Lire la page de la vidéo" style="font-size:4rem; line-height:1;">▸</span>
               </div>
             </a>
           </div>

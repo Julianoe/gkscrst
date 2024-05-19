@@ -20,7 +20,7 @@
 						<?php the_content(); ?>
 						<?php // ajout de l'affichage des tags
 						?>
-						 <?php echo the_terms( $post->ID, 'post_tag', '<div class="gc-channel-thematiques-tags"><span class="dashicons dashicons-tag"></span>Etiquettes : ', ', ', '</div>' ); ?>
+						 <?php echo the_terms( $post->ID, 'post_tag', '<div class="gc-channel-thematiques-tags">🏷️ Etiquettes : ', ', ', '</div>' ); ?>
 					</div>
 
 				</article>

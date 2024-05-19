@@ -1,8 +1,8 @@
 /*
 Theme Name: GeeksCuriosity
 Theme URI: http://www.geeks-curiosity.net/
-Description: Version responsive avec menu et contenus adaptés. 2.4 sécurise la REST API
-Version: 2.4
+Description: Version responsive avec menu et contenus adaptés.
+Version: 2.5
 Author: Julianoe (@Julianoe@mastodon.xyz)
 Author URI: https://julianoe.eu.org/
 Tags : yellow, blue, geek, blog, magazine, two-columns, right-sidebar, post-formats, featured-images, responsive-layout
@@ -675,6 +675,25 @@ margin-left: 2%;
 	z-index:10;
 }
 
+.post.format-video .post_img {
+  position: relative;
+}
+.post.format-video .video-play-icon span{
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  left: calc(50% - 3rem);
+  top: calc(50% - 6rem);
+  color: orange;
+  font-size: 12rem;
+  line-height: 1;
+  transition: opacity .4s ease;
+}
+.post.format-video .post_img:hover .video-play-icon span{
+  opacity: 1;
+  visibility: visible;
+  transition: opacity .4s ease;
+}
 
 
 

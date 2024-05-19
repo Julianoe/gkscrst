@@ -10,7 +10,7 @@
 						<?php the_time('j F Y') ?> - <?php the_author_posts_link(); ?>
 						<!-- displays the 'thematiques' if it has some -->
 						<?php if (has_term( '', 'thematiques', '' )) : ?>
-							<?php the_terms( $post->ID, 'thematiques', '| <span class="dashicons dashicons-playlist-video"></span> Thématiques : ', ', ', ' ' ); ?>
+							<?php the_terms( $post->ID, 'thematiques', '| 🖿 : ', ', ', ' ' ); ?>
 							<?php else : ?>
 						<?php endif; ?>
 						<?php if (has_term( '', 'category', '' )) : ?>
