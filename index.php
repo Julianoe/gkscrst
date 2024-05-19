@@ -34,8 +34,6 @@
 					// Close the loop
 					endwhile; endif; ?>
 
-					<!-- <div class="one column" ><a class="column-link" href="<?php echo $format_link ?>"><span>...</span></a></div> -->
-
 				</div>
 				<div class="row aligncenter">
 					<?php $format_link = get_post_format_link('video'); ?>
