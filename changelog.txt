@@ -2,3 +2,4 @@
 - v2.4 sécurise la REST API
 - v2.5 éliminer les emojis et les dashicons
 - v2.6 optimisation
+- v2.7 d'autres optimisations sur le CSS et le HTML
