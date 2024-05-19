@@ -39,12 +39,8 @@ add_action( 'widgets_init', 'register_my_sidebar' );
 
 // adding the styles and scripts
 function geeks_curiosity_scripts() {
-	// Add Normaliz
-	wp_enqueue_style( 'normalize', get_template_directory_uri() . '/css/normalize.css', array(), '3.0.2' );
-  // Add Skeleton
-	wp_enqueue_style( 'skeleton', get_template_directory_uri() . '/css/skeleton.css', array(), '2.0.4' );
 	// Theme stylesheet.
-	wp_enqueue_style( 'geeks-curiosity', get_stylesheet_directory_uri() . '/style.min.css', '', wp_get_theme()->get( 'Version' ) );
+	wp_enqueue_style( 'geeks-curiosity', get_stylesheet_directory_uri() . '/style.css', '', wp_get_theme()->get( 'Version' ) );
 }
 add_action( 'wp_enqueue_scripts', 'geeks_curiosity_scripts' );
 
@@ -55,6 +51,14 @@ function bs_dequeue_dashicons() {
         wp_deregister_style( 'dashicons' );
     }
 }
+
+//Remove Gutenberg Block Library CSS from loading on the frontend
+function smartwp_remove_wp_block_library_css(){
+  wp_dequeue_style( 'wp-block-library' );
+  wp_dequeue_style( 'wp-block-library-theme' );
+  wp_dequeue_style( 'wc-blocks-style' ); // Remove WooCommerce block CSS
+ } 
+ add_action( 'wp_enqueue_scripts', 'smartwp_remove_wp_block_library_css', 100 );
 
 /**
  * Disable the emoji's
